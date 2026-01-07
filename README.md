@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CynoGuard | feature/landing-page
 
-## Getting Started
+This branch contains the landing page implementation for **CynoGuard Security Intelligence Platform**.  
+The UI focuses on high-contrast dark/light aesthetics and conversion-friendly structure for cybersecurity infrastructure aimed at SMBs and startups.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌿 Branching Context
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Development workflow:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `main` – production stable
+- `dev` – sprint integration
+- **`feature/landing-page`** – current branch for public site UI
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+❌ No direct commits to main  
+✔ All changes merged via Pull Request to `dev`
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗️ Landing Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Modular components used in this branch:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1) Navigation & Hero
+- Navbar with logo and product links
+- Hero section with primary CTA
+- Firebase authentication entry
 
-## Deploy on Vercel
+### 2) Feature Discovery
+- Bento grid of core capabilities
+- 4x2 feature highlights
+- Security trust banners
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3) Conversion & Trust
+- Pricing table layout
+- FAQ accordion (shadcn)
+- Final signup CTA
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4) Footer
+- Minimalist black footer
+- Social links
+- SEO text references
+
+---
+
+## 🛠 Tech Stack
+
+- Framework: **Next.js 14+ – App Router**
+- Styling: **Tailwind CSS**
+- Components: **shadcn/ui**
+- Icons: **Lucide React**
+- State: **Redux**
+- Auth: **Firebase**
+
+---
+
+## 🚀 Development – This Branch
+
+### 1) Checkout
+    git checkout dev
+    git checkout -b feature/landing-page
+
+### 2) Install
+    npm install
+
+### 3) Add UI Components
+    npx shadcn-ui@latest add accordion button card
+
+### 4) Run
+    npm run dev
+
+---
+
+## 🎨 Design Standards
+
+- Components → PascalCase naming
+- CSS classes → kebab-case
+- Cards radius → 2xl and rounded-sm / 32px style
+- Comment complex UI logic clearly
+- SEO strings kept in constants
+
+---
+
+## 📬 Merge Flow
+
+1. Develop UI in this branch  
+2. PR → `dev`  
+3. Review/Test  
+4. Merge → `main`
+
+---
+
+Team CynoGuard
