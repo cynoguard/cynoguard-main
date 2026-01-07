@@ -46,7 +46,7 @@ Modular components used in this branch:
 
 ## 🛠 Tech Stack
 
-- Framework: **Next.js 14+ – App Router**
+- Framework: **Next.js 15+ – App Router**
 - Styling: **Tailwind CSS**
 - Components: **shadcn/ui**
 - Icons: **Lucide React**
