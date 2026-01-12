@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛡️ CynoGuard – Dev Branch
 
-## Getting Started
+This `dev` branch contains the **development version of the CynoGuard public website (UI only)**.
 
-First, run the development server:
+> The security dashboard console is maintained separately at: **console.cynoguard.com**
+
+---
+
+## 🌿 Branch Strategy
+
+- `main` – Production website  
+- `dev` – Integration & sprint testing  
+- Feature branches:
+  - `feature/landing-page`
+  - `fix/responsive`
+  - `chore/seo`
+  - `docs/readme`
+
+❌ No direct commits to `main`  
+✔ All work flows through feature branches → `dev`
+
+---
+
+## 🏗️ Project Scope
+
+This repository includes:
+- Public landing pages  
+- Pricing, FAQ & product flows  
+- Authentication & onboarding UI  
+- JS snippet configuration portal  
+
+❌ Dashboard frontend is **NOT part of this repo**
+
+---
+
+## 🎯 Feature Highlight – Landing Page
+
+### `feature/landing-page`
+This branch implements the **primary marketing landing page** for CynoGuard.
+
+Focus areas:
+- High-contrast dark/light UI
+- Conversion-focused hero & CTA
+- Security trust positioning for SMBs & startups
+
+#### Landing Architecture
+- Navbar & Hero section
+- Feature bento grid (4×2)
+- Pricing & FAQ accordion
+- Final signup CTA
+- Minimal SEO-optimized footer
+
+---
+
+## 🚀 Tech Stack
+
+- Framework: **Next.js 14+ (App Router)**  
+- Styling: **Tailwind CSS**  
+- UI: **shadcn/ui**  
+- Icons: **Lucide React**  
+- Animation: **Framer Motion**  
+- Fonts: **Inter / Geist**  
+- State: **Redux**  
+- Auth: **Firebase**
+
+---
+
+## ⚙️ Setup
 
 ```bash
+git checkout dev
+npm install
+npx shadcn-ui@latest add accordion button card
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
