@@ -1,44 +1,67 @@
 # 🛡️ CynoGuard – Dev Branch
 
-This `dev` branch contains the development version of the **CynoGuard main website (UI only)** deployed to the root domain path.
+This `dev` branch contains the **development version of the CynoGuard public website (UI only)**.
 
-> The dashboard console is maintained separately at: **console.cynoguard.com**
+> The security dashboard console is maintained separately at: **console.cynoguard.com**
 
 ---
 
 ## 🌿 Branch Strategy
 
 - `main` – Production website  
-- `dev` – Integration / development  
-- Feature branches  
-  - `feature/landing-page`  
-  - `fix/responsive`  
-  - `chore/seo`  
+- `dev` – Integration & sprint testing  
+- Feature branches:
+  - `feature/landing-page`
+  - `fix/responsive`
+  - `chore/seo`
   - `docs/readme`
+
+❌ No direct commits to `main`  
+✔ All work flows through feature branches → `dev`
 
 ---
 
 ## 🏗️ Project Scope
 
-This repository includes only:
-
+This repository includes:
 - Public landing pages  
 - Pricing, FAQ & product flows  
 - Authentication & onboarding UI  
-- JS snippet configuration portal
+- JS snippet configuration portal  
 
-❌ Web dashboard frontend is **NOT part of this repo**.
+❌ Dashboard frontend is **NOT part of this repo**
+
+---
+
+## 🎯 Feature Highlight – Landing Page
+
+### `feature/landing-page`
+This branch implements the **primary marketing landing page** for CynoGuard.
+
+Focus areas:
+- High-contrast dark/light UI
+- Conversion-focused hero & CTA
+- Security trust positioning for SMBs & startups
+
+#### Landing Architecture
+- Navbar & Hero section
+- Feature bento grid (4×2)
+- Pricing & FAQ accordion
+- Final signup CTA
+- Minimal SEO-optimized footer
 
 ---
 
 ## 🚀 Tech Stack
 
-- Next.js 14+ App Router  
-- Tailwind CSS  
-- shadcn/ui components  
-- Lucide React icons  
-- Framer Motion animations  
-- Inter / Geist fonts
+- Framework: **Next.js 14+ (App Router)**  
+- Styling: **Tailwind CSS**  
+- UI: **shadcn/ui**  
+- Icons: **Lucide React**  
+- Animation: **Framer Motion**  
+- Fonts: **Inter / Geist**  
+- State: **Redux**  
+- Auth: **Firebase**
 
 ---
 
@@ -49,45 +72,3 @@ git checkout dev
 npm install
 npx shadcn-ui@latest add accordion button card
 npm run dev
-```
-
-Open → http://localhost:3000
-
----
-
-## 🎯 Commit Convention
-
-Use these prefixes:
-
-- `feat:` – new UI feature  
-- `fix:` – bug / responsive  
-- `chore:` – config / deps  
-- `docs:` – README / SEO  
-- `style:` – visual update
-
-### Examples
-- feat: complete initial landing page  
-- fix: mobile hero alignment  
-- chore: add shadcn setup  
-- docs: update seo metadata
-
----
-
-## 📬 Merge Flow
-
-1. Develop → feature branches  
-2. PR → `dev`  
-3. Review UI & SEO  
-4. Merge → `main`
-
----
-
-## 👥 Team
-
-6 Contributors – CynoGuard Web Team
-
-### Status
-- Landing Page – Initial Completed  
-- SEO – Optimization Stage  
-- Docs – Draft
-````markdown
