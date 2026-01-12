@@ -2,7 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button"; 
-
+import Image from 'next/image';
+import cynoguardlogo from "../../../public/images/cynogaurd-logo.png"
 const Navbar = () => {
   return (
     <nav className="w-full bg-white">
@@ -14,12 +15,7 @@ const Navbar = () => {
             <Link href="/" className="flex items-center gap-2">
               {/* CynoGuard Logo Placeholder */}
               <div className="w-6 h-6 bg-lime-400 rounded-sm flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-0.5">
-                  <div className="w-1.5 h-1.5 bg-white"></div>
-                  <div className="w-1.5 h-1.5 bg-white"></div>
-                  <div className="w-1.5 h-1.5 bg-white"></div>
-                  <div className="w-1.5 h-1.5 bg-white"></div>
-                </div>
+               <Image src={cynoguardlogo} alt="cynoguard logo"/>
               </div>
               <span className="font-bold text-xl tracking-tight text-slate-900">
                 CynoGuard

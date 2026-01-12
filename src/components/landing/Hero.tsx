@@ -13,7 +13,7 @@ const Hero = () => {
             New
           </span>
           <span className="text-sm font-medium text-slate-600 flex items-center gap-1">
-            Introducing AI Automation 
+            Introducing v1 Automation 
             <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
           </span>
         </div>
