@@ -1,3 +1,5 @@
+import Footer from "@/components/shared/Footer";
+import Navbar from "@/components/shared/NavBar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -51,7 +53,9 @@ export default function RootLayout({
 }>) {
   return (
      <div>
+          <Navbar/>
         {children}
+          <Footer/>
      </div>
 
   );
