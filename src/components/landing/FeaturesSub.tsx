@@ -9,6 +9,7 @@ import {
   Languages, 
   Code2 
 } from 'lucide-react';
+import { cn } from "@/lib/utils";
 
 const features = [
   {
@@ -55,27 +56,27 @@ const features = [
 
 export const FeaturesSub = () => {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section className={cn("py-24 bg-white")}>
+      <div className={cn("max-w-6xl mx-auto px-4 sm:px-6")}>
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+        <div className={cn("text-center mb-20")}>
+          <h2 className={cn("text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight")}>
             Everything you need. <br />
             Nothing you don&apos;t.
           </h2>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+        <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16")}>
           {features.map((feature, index) => (
-            <div key={index} className="flex flex-col items-start text-left">
-              <div className="mb-4 p-1 text-slate-900">
+            <div key={index} className={cn("flex flex-col items-start text-left")}>
+              <div className={cn("mb-4 p-1 text-slate-900")}>
                 {feature.icon}
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <h3 className={cn("text-lg font-semibold text-slate-900 mb-2")}>
                 {feature.title}
               </h3>
-              <p className="text-sm text-slate-500 leading-relaxed">
+              <p className={cn("text-sm text-slate-500 leading-relaxed")}>
                 {feature.description}
               </p>
             </div>
