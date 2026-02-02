@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 
 const faqData = [
   {
@@ -34,23 +35,23 @@ const faqData = [
 
 export function FAQ() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+    <section className={cn("py-24 bg-white")}>
+      <div className={cn("max-w-4xl mx-auto px-4 sm:px-6")}>
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-5xl font-bold text-slate-900 tracking-tight">
+        <div className={cn("text-center mb-16")}>
+          <h2 className={cn("text-2xl md:text-5xl font-bold text-slate-900 tracking-tight")}>
             Questions and Answers
           </h2>
         </div>
 
         {/* Accordion Logic */}
-        <Accordion type="single" collapsible className="w-full space-y-2">
+        <Accordion type="single" collapsible className={cn("w-full space-y-2")}>
           {faqData.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="border-b border-slate-100 py-2">
-              <AccordionTrigger className="text-lg font-medium text-slate-900 hover:no-underline hover:text-slate-600 transition-colors text-left">
+            <AccordionItem key={index} value={`item-${index}`} className={cn("border-b border-slate-100 py-2")}>
+              <AccordionTrigger className={cn("text-lg font-medium text-slate-900 hover:no-underline hover:text-slate-600 transition-colors text-left")}>
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-slate-500 leading-relaxed text-base">
+              <AccordionContent className={cn("text-slate-500 leading-relaxed text-base")}>
                 {item.answer}
               </AccordionContent>
             </AccordionItem>

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { fontGeist, fontSans } from "../../public/fonts";
-import Navbar from "@/components/shared/NavBar";
-import Footer from "@/components/shared/Footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
@@ -56,9 +54,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
          <main className={`${fontSans.className} ${fontGeist.className} w-full`}>
-          <Navbar/>
           {children}
-          <Footer/>
         </main>
       </body>
     </html>
