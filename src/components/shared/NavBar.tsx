@@ -1,12 +1,12 @@
 "use client"
 
-import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
-import { ChevronDown, ChevronRight, Shield, Zap, Globe } from 'lucide-react';
-import { Button } from "@/components/ui/button"; 
-import Image from 'next/image';
-import cynoguardlogo from "../../../public/images/cynogaurd-logo.png"
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ChevronDown, ChevronRight, Globe, Shield, Zap } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import cynoguardlogo from "../../../public/images/cynogaurd-logo.png";
 
 const Navbar = () => {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
@@ -16,19 +16,19 @@ const Navbar = () => {
   const products = [
     {
       name: "Bot Detection",
-      href: "/products/bot-detection",
+      href: "/bot-detection",
       icon: <Zap className="w-4 h-4" />,
       description: "Advanced AI-powered bot detection"
     },
     {
       name: "Domain Monitoring",
-      href: "/products/domain-monitoring",
+      href: "/domain-monitoring",
       icon: <Shield className="w-4 h-4" />,
       description: "Real-time domain threat monitoring"
     },
     {
       name: "Social Media Monitoring",
-      href: "/products/social-media-monitoring",
+      href: "/social-media-monitoring",
       icon: <Globe className="w-4 h-4" />,
       description: "Track phishing discussions across platforms"
     },
@@ -139,7 +139,7 @@ const Navbar = () => {
           {/* Right Side: Auth Actions */}
           <div className="flex items-center gap-6">
             <Link 
-              href="/signin" 
+              href="/sign-up" 
               className="text-sm font-medium text-slate-700 hover:text-slate-900 flex items-center gap-1"
             >
               Sign in <ChevronRight size={16} />

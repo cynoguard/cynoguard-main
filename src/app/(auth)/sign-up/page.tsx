@@ -1,14 +1,12 @@
-"use client"
-
 import { SignupForm } from "@/components/signup-form"
 import { GalleryVerticalEnd } from "lucide-react"
 import Link from "next/link"
 
-const Page = () => {
+export default function SignupPage() {
   return (
-    <div className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden p-6 md:p-10">
+      <div className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden p-6 md:p-10">
       {/* Animated Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
+      <div className="absolute inset-0 bg-linear-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
       
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -33,17 +31,15 @@ const Page = () => {
             <span className="text-xl font-bold tracking-tight">Cynoguard Inc.</span>
           </Link>
           <p className="text-sm text-muted-foreground text-center max-w-xs">
-            Join thousands of businesses securing their digital assets
+            Secure your business with enterprise-grade protection
           </p>
         </div>
 
-        {/* Signup Form */}
+        {/* Login Form */}
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
-          <SignupForm />
+        <SignupForm />
         </div>
       </div>
     </div>
   )
 }
-
-export default Page

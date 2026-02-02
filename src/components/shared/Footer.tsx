@@ -9,10 +9,32 @@ import {
 } from 'lucide-react';
 
 const footerLinks = {
-  Product: ['Features', 'Integrations', 'Updates', 'FAQ', 'Pricing'],
-  Company: ['About', 'Blog', 'Careers', 'Manifesto', 'Press', 'Contact'],
-  Resources: ['Examples', 'Community', 'Guides', 'Docs'],
-  Legal: ['Privacy', 'Terms', 'Security'],
+  Product: [
+    { name: 'Features', href: '#' },
+    { name: 'Integrations', href: '#' },
+    { name: 'Updates', href: '#' },
+    { name: 'FAQ', href: '#' },
+    { name: 'Pricing', href: '/pricing' }
+  ],
+  Company: [
+    { name: 'About', href: '#' },
+    { name: 'Blog', href: '#' },
+    { name: 'Careers', href: '#' },
+    { name: 'Manifesto', href: '#' },
+    { name: 'Press', href: '#' },
+    { name: 'Contact', href: '#' }
+  ],
+  Resources: [
+    { name: 'Examples', href: '#' },
+    { name: 'Community', href: '#' },
+    { name: 'Guides', href: '#' },
+    { name: 'Docs', href: '#' }
+  ],
+  Legal: [
+    { name: 'Privacy', href: '/privacy-policy' },
+    { name: 'Terms', href: '/terms-of-services' },
+    { name: 'Security', href: '#' }
+  ],
 };
 
 const socialIcons = [
@@ -67,12 +89,12 @@ export const Footer = () => {
                 <h3 className="font-bold text-white mb-6">{category}</h3>
                 <ul className="space-y-4">
                   {links.map((link) => (
-                    <li key={link}>
+                    <li key={link.name}>
                       <Link 
-                        href="#" 
+                        href={link.href} 
                         className="text-slate-500 hover:text-white transition-colors text-sm"
                       >
-                        {link}
+                        {link.name}
                       </Link>
                     </li>
                   ))}
