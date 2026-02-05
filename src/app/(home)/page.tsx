@@ -1,4 +1,4 @@
-import FAQ from "@/components/landing/FAQ"
+simport FAQ from "@/components/landing/FAQ"
 import { FeaturesGrid } from "@/components/landing/FeaturesGrid"
 import FeaturesSub from "@/components/landing/FeaturesSub"
 import FinalCTA, { SignupCTA } from "@/components/landing/SignupCTA"
