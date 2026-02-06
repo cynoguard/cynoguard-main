@@ -36,6 +36,9 @@ const Navbar = () => {
               <Link href="/blog" className="hover:text-slate-900 transition-colors">
                 Blog
               </Link>
+              <Link href="/risk-score" className="hover:text-slate-900 transition-colors">
+                Risk Score
+              </Link>
               <Link href="/pricing" className="hover:text-slate-900 transition-colors">
                 Pricing
               </Link>
