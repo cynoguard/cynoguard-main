@@ -1,22 +1,27 @@
-import { Inter as FontSans, Urbanist } from "next/font/google";
-import localFont from "next/font/local";
+﻿import localFont from "next/font/local";
 
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-export const fontUrban = Urbanist({
-  subsets: ["latin"],
-  variable: "--font-urban",
-})
+export const fontSans = localFont({
+  src: [
+    {
+      path: "./Inter-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./Inter-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-geist-sans",
+});
 
 export const fontHeading = localFont({
   src: "./CalSans-SemiBold.woff2",
   variable: "--font-heading",
-})
+});
 
 export const fontGeist = localFont({
   src: "./GeistVF.woff2",
-  variable: "--font-geist",
-})
+  variable: "--font-geist-mono",
+});
