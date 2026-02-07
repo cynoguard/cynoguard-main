@@ -1,8 +1,6 @@
-import Image from "next/image";
 import { ArrowRight, Radar, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import dashboardImage from "../../../../public/images/test-product-dashboard-image.png";
 
 const Hero = () => {
   return (
@@ -58,14 +56,6 @@ const Hero = () => {
             <ShieldCheck className="w-4 h-4 text-blue-600" />
             Live domain risk map and alert queue
           </div>
-          <Image
-            className={cn("rounded-xl border border-slate-200 bg-white")}
-            src={dashboardImage}
-            alt="Cynoguard domain monitoring dashboard"
-            width={1100}
-            height={640}
-            priority
-          />
         </div>
       </div>
     </section>
