@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function BotDetectionPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-background text-foreground">
       
       <BotDetectionHero />
       <BotDetectionFeatureGrid />
