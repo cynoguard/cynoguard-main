@@ -56,6 +56,68 @@ const Hero = () => {
             <ShieldCheck className="w-4 h-4 text-blue-600" />
             Live domain risk map and alert queue
           </div>
+
+          <div className={cn("grid gap-4 md:grid-cols-[1.2fr_1fr]")}>
+            <div className={cn("relative overflow-hidden rounded-xl border border-slate-200 bg-slate-50 p-4")}>
+              <div className={cn("absolute -top-10 -left-10 h-28 w-28 rounded-full bg-blue-200/40 blur-2xl")} />
+              <div className={cn("absolute -bottom-12 right-6 h-24 w-24 rounded-full bg-emerald-200/40 blur-2xl")} />
+              <div className={cn("flex items-center justify-between text-xs text-slate-500")}>
+                <span>Risk map</span>
+                <span className={cn("rounded-full bg-white px-2 py-0.5 text-[10px] text-slate-600 border border-slate-200")}>
+                  last 15m
+                </span>
+              </div>
+              <div className={cn("mt-4 grid grid-cols-3 gap-2 text-[10px] text-slate-600")}>
+                {[
+                  { label: "US-West", level: "High", color: "bg-red-100 text-red-700 border-red-200" },
+                  { label: "EU-Central", level: "Medium", color: "bg-amber-100 text-amber-700 border-amber-200" },
+                  { label: "APAC", level: "Low", color: "bg-emerald-100 text-emerald-700 border-emerald-200" },
+                  { label: "LATAM", level: "Medium", color: "bg-amber-100 text-amber-700 border-amber-200" },
+                  { label: "ME-SEA", level: "Low", color: "bg-emerald-100 text-emerald-700 border-emerald-200" },
+                  { label: "Global", level: "High", color: "bg-red-100 text-red-700 border-red-200" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className={cn(
+                      "rounded-lg border bg-white px-2 py-2 text-center shadow-sm",
+                      item.color
+                    )}
+                  >
+                    <div className="font-semibold">{item.label}</div>
+                    <div className="text-[9px] uppercase tracking-wide">{item.level}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className={cn("rounded-xl border border-slate-200 bg-white p-4")}>
+              <div className={cn("flex items-center justify-between text-xs text-slate-500")}>
+                <span>Alert queue</span>
+                <span className={cn("text-[10px] text-blue-600 font-medium")}>6 active</span>
+              </div>
+              <div className={cn("mt-3 space-y-2")}>
+                {[
+                  { title: "cyn0guard.com", tag: "Impersonation", tone: "bg-red-100 text-red-700 border-red-200" },
+                  { title: "mx.cyno-mail.net", tag: "MX change", tone: "bg-amber-100 text-amber-700 border-amber-200" },
+                  { title: "ssl mismatch", tag: "Certificate", tone: "bg-amber-100 text-amber-700 border-amber-200" },
+                  { title: "login-cynoguard.io", tag: "Typosquat", tone: "bg-red-100 text-red-700 border-red-200" },
+                ].map((alert) => (
+                  <div
+                    key={alert.title}
+                    className={cn("flex items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-3 py-2")}
+                  >
+                    <span className={cn("text-xs font-medium text-slate-800")}>{alert.title}</span>
+                    <span className={cn("text-[10px] px-2 py-0.5 rounded-full border", alert.tone)}>
+                      {alert.tag}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className={cn("mt-3 text-[11px] text-slate-500")}>
+                Auto-triage applied to 4/6 alerts • Avg time-to-review: 6m
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
