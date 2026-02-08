@@ -1,7 +1,5 @@
-import Image from "next/image"
 import { Activity, ArrowRight, Bell, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
 const SocialMonitoringHero = () => {
@@ -10,8 +8,8 @@ const SocialMonitoringHero = () => {
       <div className="absolute -top-48 right-0 h-96 w-96 rounded-full bg-blue-100/50 blur-3xl" />
       <div className="absolute -bottom-40 left-10 h-80 w-80 rounded-full bg-slate-100 blur-3xl" />
 
-      <div className={cn("relative z-10 max-w-6xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] items-center")}>
-        <div className="space-y-8">
+      <div className={cn("relative z-10 max-w-6xl mx-auto px-4 sm:px-6")}>
+        <div className="space-y-8 max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 shadow-sm">
             <span className="rounded-full bg-blue-600 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
               Social
@@ -50,35 +48,6 @@ const SocialMonitoringHero = () => {
                 <span>{item.label}</span>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div className="relative">
-          <Card className="border-slate-200 bg-white/90 shadow-lg">
-            <CardContent className="p-3">
-              <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
-                <Image
-                  src="/images/test-product-dashboard-image.png"
-                  alt="Social media monitoring dashboard preview"
-                  width={1200}
-                  height={800}
-                  priority
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  className="h-auto w-full object-cover"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="absolute -bottom-6 left-6 right-6 grid grid-cols-2 gap-3">
-            <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
-              <p className="text-xs font-medium text-slate-500">Signals triaged</p>
-              <p className="text-lg font-semibold text-slate-900">4,312 / day</p>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
-              <p className="text-xs font-medium text-slate-500">Mean time to detect</p>
-              <p className="text-lg font-semibold text-slate-900">2m 14s</p>
-            </div>
           </div>
         </div>
       </div>
