@@ -1,5 +1,6 @@
 
 import FeatureGrid from "@/components/products/domain-monitoring/FeatureGrid";
+import FAQ from "@/components/products/domain-monitoring/FAQ";
 import Hero from "@/components/products/domain-monitoring/Hero";
 import HowItWorks from "@/components/products/domain-monitoring/HowItWorks";
 import Footer from "@/components/shared/Footer";
@@ -16,6 +17,7 @@ const Page = () => {
         <Hero />
         <FeatureGrid />
         <HowItWorks />
+        <FAQ />
       </div>
       <Footer />
     </>
