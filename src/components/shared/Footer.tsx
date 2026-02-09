@@ -107,7 +107,10 @@ export const Footer = () => {
         {/* Bottom Bar (Optional addition for copyright) */}
         <div className="mt-20 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-600 text-xs">
           <p>© 2026 CynoGuard Inc. All rights reserved.</p>
-          <p className='flex justify-center items-center gap-1'>System status<div className='h-2 w-2 rounded-full bg-green-400'></div></p>
+          <p className="flex justify-center items-center gap-1">
+            System status
+            <span className="h-2 w-2 rounded-full bg-green-400" />
+          </p>
         </div>
       </div>
     </footer>
