@@ -20,7 +20,7 @@ const footerLinks = {
     { name: "Docs", href: "#" },
     { name: "Community", href: "#" },
     { name: "Guides", href: "#" },
-    { name: "Support", href: "/support" }, // ✅ added
+    { name: "Support", href: "/support" }, // ✅ support portal
   ],
   Legal: [
     { name: "Privacy", href: "/privacy-policy" },
@@ -44,23 +44,26 @@ export default function Footer() {
 
           {/* Left */}
           <div className="lg:col-span-4">
-            <p className="text-slate-400 text-lg mb-8 max-w-xs">
+            <p className="text-slate-400 text-lg mb-8 max-w-xs leading-relaxed">
               Effortlessly protect your entire online business workflow
             </p>
 
-            <div className="mb-10 text-[#bef227] w-16 h-16">
+            <div className="mb-10 w-16 h-16 text-[#bef227]">
               <svg viewBox="0 0 100 100" fill="currentColor">
                 <path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" />
               </svg>
             </div>
 
-            {/* Social */}
-            <div className="flex gap-6 text-slate-400">
-              {socialIcons.map((Icon, i) => (
-                <Link key={i} href="#" className="hover:text-white">
-                  <Icon.icon size={20} />
-                </Link>
-              ))}
+            {/* Social Icons */}
+            <div className="flex flex-wrap gap-6 text-slate-400">
+              {socialIcons.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <Link key={i} href={item.href} className="hover:text-white transition-colors">
+                    <Icon size={20} />
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
@@ -72,7 +75,7 @@ export default function Footer() {
                 <ul className="space-y-3 text-sm text-slate-500">
                   {links.map((link) => (
                     <li key={link.name}>
-                      <Link href={link.href} className="hover:text-white">
+                      <Link href={link.href} className="hover:text-white transition-colors">
                         {link.name}
                       </Link>
                     </li>
@@ -84,10 +87,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-6 border-t border-slate-900 flex justify-between text-xs text-slate-600">
-          <p>© 2026 CynoGuard Inc.</p>
+        <div className="mt-16 pt-6 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+          <p>© 2026 CynoGuard Inc. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            System status <span className="w-2 h-2 bg-green-400 rounded-full" />
+            System status
+            <span className="w-2 h-2 bg-green-400 rounded-full" />
           </p>
         </div>
       </div>
