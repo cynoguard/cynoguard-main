@@ -30,6 +30,33 @@ const posts = [
     author: "Sasha Patel",
     role: "Security PM",
   },
+  {
+    title: "The New Bot Economy: Residential Proxies and Device Farms",
+    slug: "bot-economy",
+    date: "Dec 05, 2025",
+    readTime: "5 min read",
+    category: "Threat Intel",
+    author: "Marcus Reed",
+    role: "Intel Analyst",
+  },
+  {
+    title: "Measuring False Positives in Bot Mitigation",
+    slug: "false-positives",
+    date: "Nov 21, 2025",
+    readTime: "6 min read",
+    category: "Product",
+    author: "Amina Lewis",
+    role: "Threat Research",
+  },
+  {
+    title: "From Rate Limits to Risk Scores: A Pragmatic Stack",
+    slug: "risk-scores",
+    date: "Nov 02, 2025",
+    readTime: "9 min read",
+    category: "Bot Defense",
+    author: "Riley Chen",
+    role: "Platform Security",
+  },
 ];
 
 const postBody: Record<string, JSX.Element> = {
@@ -110,14 +137,74 @@ const postBody: Record<string, JSX.Element> = {
       </p>
     </>
   ),
+  "bot-economy": (
+    <>
+      <p>
+        Bot operators now combine residential proxy pools, anti-detect
+        browsers, and low-cost device farms to evade simple IP and ASN blocks.
+        Defenses need to focus on campaign-level behavior, not single requests.
+      </p>
+      <h2>What changed in the attacker stack</h2>
+      <ul>
+        <li>Residential IP rotation on every high-risk step.</li>
+        <li>Device profile randomization to avoid static fingerprint bans.</li>
+        <li>Hybrid human-plus-automation solve services for challenges.</li>
+      </ul>
+      <p>
+        Teams should prioritize link analysis across sessions: repeated flow
+        paths, shared timing signatures, and identity graph overlap.
+      </p>
+    </>
+  ),
+  "false-positives": (
+    <>
+      <p>
+        Blocking abuse is only half the job. If controls reject real customers,
+        revenue loss can exceed fraud savings. False-positive management needs
+        first-class metrics and owner accountability.
+      </p>
+      <h2>Core metrics to track weekly</h2>
+      <ol>
+        <li>Challenge rate by journey and customer tier.</li>
+        <li>Challenge fail rate for known good users.</li>
+        <li>Recovery conversion after step-up or block events.</li>
+      </ol>
+      <p>
+        Start with dashboards segmented by traffic source and device family so
+        you can spot over-blocking patterns early.
+      </p>
+    </>
+  ),
+  "risk-scores": (
+    <>
+      <p>
+        Most teams start with rate limits, then add point controls for login,
+        signup, and checkout abuse. The practical next step is a shared risk
+        model that adapts enforcement by context.
+      </p>
+      <h2>Build a lightweight, layered stack</h2>
+      <ul>
+        <li>Per-endpoint velocity controls for immediate containment.</li>
+        <li>Session-level scoring from behavior and device stability.</li>
+        <li>Identity-level history to persist trust and suspicion.</li>
+      </ul>
+      <p>
+        Use score bands to trigger actions: allow, soft challenge, hard
+        challenge, or block. This keeps controls explainable for support teams.
+      </p>
+    </>
+  ),
 };
 
-export default function BlogPostPage({
+type PageParams = { slug: string } | Promise<{ slug: string }>;
+
+export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: PageParams;
 }) {
-  const post = posts.find((item) => item.slug === params.slug);
+  const resolvedParams = await params;
+  const post = posts.find((item) => item.slug === resolvedParams.slug);
 
   if (!post) {
     notFound();
@@ -218,7 +305,7 @@ export default function BlogPostPage({
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm text-slate-600">
-                  {item.date} · {item.readTime}
+                  {item.date} - {item.readTime}
                 </p>
               </Link>
             ))}
