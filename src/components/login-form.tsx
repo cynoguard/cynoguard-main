@@ -22,6 +22,7 @@ import { GithubAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, sig
 import axios from "axios"
 import Link from "next/link"
 import { useState } from "react"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "./ui/dialog"
 import { Spinner } from "./ui/spinner"
 
 export function LoginForm({
@@ -30,6 +31,8 @@ export function LoginForm({
 }: React.ComponentProps<"div">) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string>("")
+  const [organizations,setOrganizations] = useState<[]>([]);
+
   const handleSubmit = async(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     setError("");
@@ -56,8 +59,8 @@ export function LoginForm({
           }
       );
       if (response.data.status === "success") {
-        if(response.data.data.is_onboarded === true){
-         return window.location.href = "http://localhost:3004/dashboard";
+        if(response.data.data.organizations.length > 0){
+         setOrganizations(response.data.data.organizations);
         }else{
          return window.location.href = "http://localhost:3004/onboarding";
         }
@@ -106,8 +109,8 @@ export function LoginForm({
         }
       );
       if (response.data.status === "success") {
-       if(response.data.data.is_onboarded === true){
-         return window.location.href = "http://localhost:3004/dashboard";
+        if(response.data.data.organizations.length > 0){
+         setOrganizations(response.data.data.organizations);
         }else{
          return window.location.href = "http://localhost:3004/onboarding";
         }      
@@ -152,8 +155,8 @@ export function LoginForm({
         }
       );
       if (response.data.status === "success") {
-        if(response.data.data.is_onboarded === true){
-         return window.location.href = "http://localhost:3004/dashboard";
+        if(response.data.data.organizations.length > 0){
+         setOrganizations(response.data.data.organizations);
         }else{
          return window.location.href = "http://localhost:3004/onboarding";
         }
@@ -170,6 +173,17 @@ export function LoginForm({
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
+       <Dialog open={organizations.length > 0} >
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Are you absolutely sure?</DialogTitle>
+          <DialogDescription>
+            This action cannot be undone. This will permanently delete your account
+            and remove your data from our servers.
+          </DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
       <Card className="border-0 shadow-xl shadow-black/5 dark:shadow-black/20 backdrop-blur-sm bg-card/80">
         <CardHeader className="text-center space-y-2 pb-6">
           <CardTitle className="text-2xl font-bold tracking-tight">Welcome back</CardTitle>

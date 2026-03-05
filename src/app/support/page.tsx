@@ -1,10 +1,10 @@
-import type { Metadata } from "next"
-import Navbar from "@/components/marketing/Navbar"
-import { SupportHero } from "@/components/support/SupportHero"
+import Footer from "@/components/shared/Footer"
+import Navbar from "@/components/shared/NavBar"
 import { SupportCategories } from "@/components/support/SupportCategories"
 import { SupportFAQ } from "@/components/support/SupportFAQ"
+import { SupportHero } from "@/components/support/SupportHero"
 import { SupportTicketCTA } from "@/components/support/SupportTicketCTA"
-import { Footer } from "@/components/marketing/Footer"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Help Center & Support",
