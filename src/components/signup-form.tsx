@@ -24,6 +24,7 @@ import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider,
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog"
 import { Spinner } from "./ui/spinner"
 
 export function SignupForm({
@@ -33,6 +34,7 @@ export function SignupForm({
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string>("")
+  const [organizations,setOrganizations] = useState<[]>([]);
   const [fieldErrors, setFieldErrors] = useState<{
     firstName?: string
     email?: string
@@ -160,15 +162,17 @@ export function SignupForm({
         }
       );
       if (response.data.status === "success") {
-       if(response.data.data.is_onboarded === true){
-         return window.location.href = "http://localhost:3004/dashboard";
+        console.log(response.data);
+       if(response.data.data?.organizations?.length > 0){
+         setOrganizations(response.data.data.organizations);
         }else{
-         return window.location.href = "http://localhost:3004/onboarding";
+         return window.location.href = `http://localhost:3000/onboarding/${response.data.data.token}/setup-organization`;
         }      
       } else {
         throw new Error("Failed to register user");
       } 
      }catch(error){
+         console.log(error);
         setError("An unexpected error occurred. Please try again.")
      }finally{
       setLoading(false);
@@ -206,8 +210,8 @@ export function SignupForm({
         }
       );
       if (response.data.status === "success") {
-        if(response.data.data.is_onboarded === true){
-         return window.location.href = "http://localhost:3004/dashboard";
+         if(response.data.data.organizations.length > 0){
+         setOrganizations(response.data.data.organizations);
         }else{
          return window.location.href = "http://localhost:3004/onboarding";
         }
@@ -223,6 +227,67 @@ export function SignupForm({
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
+     <Dialog open={organizations.length > 0} onOpenChange={()=>setOrganizations([])}>
+  <DialogContent className="max-w-md">
+    <DialogHeader>
+      <DialogTitle className="text-xl font-semibold">
+        Select organization
+      </DialogTitle>
+      <p className="text-sm text-muted-foreground">
+        Choose the organization you want to work with right now.
+      </p>
+    </DialogHeader>
+
+    <div className="mt-4 space-y-3 max-h-[400px] overflow-y-auto">
+      {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        organizations.map((org: any) => (
+          <div
+            key={org.id}
+            onClick={() => {
+              if (org.is_onboarded) {
+                window.location.href = `http://localhost:3000/${org.name.trim().toLowerCase()}/projects`
+              } else {
+                window.location.href = `http://localhost:3000/onboarding/setup-organization/${org.session_token}`
+              }
+            }}
+            className="
+              group
+              p-4
+              border
+              rounded-xl
+              cursor-pointer
+              transition-all
+              hover:bg-muted
+              hover:border-primary
+              hover:shadow-sm
+            "
+          >
+            {/* Organization Name */}
+            <div className="flex items-center justify-between">
+              <h3 className="font-medium text-base">
+                {org.name}
+              </h3>
+
+              {!org.is_onboarded && (
+                <span className="text-xs px-2 py-1 rounded-md bg-yellow-100 text-yellow-700">
+                  Setup required
+                </span>
+              )}
+            </div>
+
+            {/* Optional subtitle */}
+            <p className="text-xs text-muted-foreground mt-1">
+              {org.is_onboarded
+                ? "Open workspace"
+                : "Continue onboarding"}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </DialogContent>
+</Dialog>
       <Card className="border-0 shadow-xl shadow-black/5 dark:shadow-black/20 backdrop-blur-sm bg-card/80">
         <CardHeader className="text-center space-y-1 pb-6">
           <CardTitle className="text-2xl font-bold tracking-tight">Create your account</CardTitle>
