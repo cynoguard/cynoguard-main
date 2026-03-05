@@ -54,7 +54,7 @@ Focus areas:
 
 ## 🚀 Tech Stack
 
-- Framework: **Next.js 14+ (App Router)**  
+- Framework: **Next.js 16+ (App Router)**  
 - Styling: **Tailwind CSS**  
 - UI: **shadcn/ui**  
 - Icons: **Lucide React**  
