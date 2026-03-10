@@ -1,13 +1,9 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { 
-  Card, 
-  CardContent, 
-  CardHeader, 
-  CardTitle 
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const plans = [
   {
@@ -62,8 +58,6 @@ export const Pricing = () => {
   return (
     <section className={cn("py-24 bg-white")}>
       <div className={cn("max-w-6xl mx-auto px-4 sm:px-6")}>
-        
-        {/* Top Section Header */}
         <div className={cn("text-center mb-20")}>
           <div className={cn("inline-block px-4 py-1.5 mb-6 border border-slate-200 rounded-full bg-white shadow-sm")}>
             <span className={cn("text-[12px] font-medium text-slate-800")}>Boost your productivity</span>
@@ -77,16 +71,13 @@ export const Pricing = () => {
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
         <div className={cn("grid grid-cols-1 md:grid-cols-3 gap-6 items-end")}>
           {plans.map((plan) => (
-            <Card 
-              key={plan.name} 
+            <Card
+              key={plan.name}
               className={cn(
                 "flex flex-col border-slate-100 rounded-[2rem] shadow-sm transition-all p-4 min-h-150",
-                plan.popular 
-                  ? "bg-[#000000] text-white shadow-2xl" 
-                  : "bg-white text-slate-900"
+                plan.popular ? "bg-[#000000] text-white shadow-2xl" : "bg-white text-slate-900"
               )}
             >
               <CardHeader className={cn("pt-8 px-8")}>
@@ -101,34 +92,26 @@ export const Pricing = () => {
                   )}
                 </div>
                 <div className={cn("flex items-baseline gap-1")}>
-                  <CardTitle className={cn("text-5xl font-bold tracking-tighter")}>
-                    {plan.price}
-                  </CardTitle>
-                  <span className={cn("text-sm", plan.popular ? "text-slate-400" : "text-slate-500")}>
-                    /monthly
-                  </span>
+                  <CardTitle className={cn("text-5xl font-bold tracking-tighter")}>{plan.price}</CardTitle>
+                  <span className={cn("text-sm", plan.popular ? "text-slate-400" : "text-slate-500")}>/monthly</span>
                 </div>
               </CardHeader>
 
               <CardContent className={cn("px-8 grow")}>
-                <Button 
+                <Button
                   className={cn(
                     "w-full py-5 rounded-sm font-bold text-base mb-10 transition-colors",
-                    plan.popular 
-                      ? "bg-white text-black hover:bg-slate-100" 
-                      : "bg-black text-white hover:bg-slate-800"
+                    plan.popular ? "bg-white text-black hover:bg-slate-100" : "bg-black text-white hover:bg-slate-800"
                   )}
+                  asChild
                 >
-                  {plan.buttonText}
+                  <Link href="/sign-up">{plan.buttonText}</Link>
                 </Button>
-
                 <ul className={cn("space-y-4")}>
                   {plan.features.map((feature) => (
                     <li key={feature} className={cn("flex items-center gap-4 text-[14px] font-medium")}>
                       <Check className={cn("w-4 h-4 shrink-0", plan.popular ? "text-white" : "text-slate-900")} strokeWidth={3} />
-                      <span className={cn(plan.popular ? "text-slate-200" : "text-slate-600")}>
-                        {feature}
-                      </span>
+                      <span className={cn(plan.popular ? "text-slate-200" : "text-slate-600")}>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -137,10 +120,9 @@ export const Pricing = () => {
           ))}
         </div>
 
-        {/* Bottom Contact Text */}
         <div className={cn("mt-16 text-center")}>
           <p className={cn("text-slate-400 text-sm font-medium")}>
-            Contact sale for the enterprise packages and solutions
+            Contact sales for enterprise packages and solutions
           </p>
         </div>
       </div>
