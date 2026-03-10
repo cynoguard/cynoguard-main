@@ -7,26 +7,67 @@ import Link from "next/link";
 export const SignupCTA = () => {
   return (
     <section className={cn("relative w-full py-32 overflow-hidden bg-white")}>
+
+      {/* Grid bg */}
+      <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
+
+      {/* Blue radial glow from bottom */}
       <div
-        className={cn("absolute inset-0 opacity-40")}
-        style={{ background: `radial-gradient(circle at bottom, #276AC3 10%, #ffffff 90%)` }}
+        className="absolute inset-0 opacity-50 pointer-events-none"
+        style={{ background: `radial-gradient(ellipse 80% 60% at 50% 120%, #2563eb18, transparent)` }}
       />
-      <div className={cn("relative max-w-4xl mx-auto px-4 text-center")}>
-        <h2 className={cn("text-5xl md:text-6xl font-bold tracking-tight text-[#0a1120] mb-4")}>
+
+      {/* Decorative orbs */}
+      <div className="absolute top-10 left-1/4 w-64 h-64 rounded-full bg-blue-100/30 blur-3xl pointer-events-none animate-pulse-slow" />
+      <div className="absolute bottom-10 right-1/4 w-48 h-48 rounded-full bg-slate-200/40 blur-3xl pointer-events-none animate-pulse-slow delay-500" />
+
+      <div className={cn("relative z-10 max-w-4xl mx-auto px-4 text-center")}>
+
+        {/* Eyebrow */}
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
+          <div className="inline-flex items-center gap-2 border border-slate-200 rounded-full bg-white/80 px-4 py-1.5 shadow-sm mb-8">
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-sm text-slate-600 font-medium">Free forever on the Starter plan</span>
+          </div>
+        </div>
+
+        <h2 className={cn(
+          "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-150 fill-mode-both",
+          "text-5xl md:text-6xl font-bold tracking-tight text-[#0a1120] mb-4"
+        )}>
           Sign up for free today
         </h2>
-        <p className={cn("text-slate-500 text-lg md:text-lg font-medium mb-10")}>
+
+        <p className={cn(
+          "animate-in fade-in duration-700 delay-300 fill-mode-both",
+          "text-slate-500 text-lg md:text-lg font-medium mb-10"
+        )}>
           Protect your whole reputation with just $0
         </p>
-        <div className={cn("flex flex-col sm:flex-row items-center justify-center gap-6")}>
-          <Button className={cn("bg-black text-white hover:bg-slate-800 px-8 py-5 rounded-sm text-lg font-bold shadow-xl transition-all")} asChild>
+
+        <div className={cn(
+          "animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400 fill-mode-both",
+          "flex flex-col sm:flex-row items-center justify-center gap-6"
+        )}>
+          <Button
+            className={cn(
+              "bg-[#0a1120] text-white hover:bg-slate-800 px-8 py-5 rounded-md text-base font-bold shadow-xl",
+              "transition-all hover:scale-[1.03] hover:shadow-2xl"
+            )}
+            asChild
+          >
             <Link href="/sign-up">Get for free</Link>
           </Button>
-          <Link href="/docs" className={cn("flex items-center gap-2 text-lg font-semibold text-slate-900 hover:gap-3 transition-all group")}>
+
+          <Link
+            href="/docs"
+            className={cn("flex items-center gap-2 text-base font-semibold text-slate-700 hover:text-slate-900 group transition-all")}
+          >
             Learn more
-            <ArrowRight size={20} className={cn("group-hover:translate-x-1 transition-transform")} />
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
+
       </div>
     </section>
   );
