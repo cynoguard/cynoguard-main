@@ -77,8 +77,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: oklch(0.07 0 0);
+  --foreground: oklch(0.95 0 0);
 }
 
 .dark {
@@ -173,14 +173,14 @@
 
   /* ── Gradient text ─────────────────────────────────── */
   .text-gradient {
-    background: linear-gradient(135deg, #0a1120 0%, #2563eb 50%, #0a1120 100%);
+    background: linear-gradient(135deg, #0a1120 0%, #16a34a 50%, #0a1120 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-blue {
-    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #06b6d4 100%);
+    background: linear-gradient(135deg, #15803d 0%, #22c55e 50%, #4ade80 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -188,11 +188,20 @@
 
   /* ── Glow effects ──────────────────────────────────── */
   .glow-blue {
-    box-shadow: 0 0 40px -8px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 0 40px -8px rgba(34, 197, 94, 0.25);
   }
 
   .glow-blue-sm {
-    box-shadow: 0 0 20px -4px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 0 20px -4px rgba(34, 197, 94, 0.2);
+  }
+
+  /* ── Green glow effects ──────────────────────────────────── */
+  .glow-green {
+    box-shadow: 0 0 40px -8px rgba(34, 197, 94, 0.3);
+  }
+
+  .glow-green-sm {
+    box-shadow: 0 0 20px -4px rgba(34, 197, 94, 0.2);
   }
 
   /* ── Scanning line (bot detection) ─────────────────── */
@@ -236,6 +245,41 @@
   }
   .animate-orbit-slow {
     animation: orbit 16s linear infinite;
+  }
+
+  /* ── Typewriter cursor ─────────────────────────────── */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  /* ── Data stream (vertical) ────────────────────────── */
+  @keyframes data-stream {
+    0% { transform: translateY(-100%); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+  .animate-data-stream {
+    animation: data-stream 8s linear infinite;
+  }
+
+  /* ── Glow pulse ─────────────────────────────── */
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.6); }
+  }
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  /* ── Matrix rain characters ────────────────────────── */
+  @keyframes matrix-drop {
+    0% { transform: translateY(-100%); opacity: 1; }
+    100% { transform: translateY(200%); opacity: 0; }
   }
 
   /* ── Fade-fill (opacity 0 → keep visible after animate-in) */

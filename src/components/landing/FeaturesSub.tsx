@@ -15,14 +15,14 @@ const features = [
 
 export const FeaturesSub = () => {
   return (
-    <section className={cn("relative py-24 bg-white overflow-hidden")}>
+    <section className={cn("relative py-24 bg-[#020812] overflow-hidden")}>
       {/* Top separator */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-green-900/40 to-transparent" />
 
       <div className={cn("max-w-6xl mx-auto px-4 sm:px-6")}>
         <div className={cn("text-center mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both")}>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 mb-3">Capabilities</p>
-          <h2 className={cn("text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight")}>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Capabilities</p>
+          <h2 className={cn("text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight")}>
             Everything you need.{" "}
             <span className="text-gradient-blue">Nothing you don&apos;t.</span>
           </h2>
@@ -40,16 +40,16 @@ export const FeaturesSub = () => {
               )}
             >
               <div className={cn(
-                "mb-4 p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-slate-700",
-                "group-hover:bg-blue-50 group-hover:border-blue-200 group-hover:text-blue-600",
+                "mb-4 p-2.5 rounded-lg bg-gray-800 border border-gray-700 text-gray-400",
+                "group-hover:bg-green-950/40 group-hover:border-green-800 group-hover:text-green-500",
                 "transition-all duration-200"
               )}>
                 <feature.icon className="w-5 h-5" />
               </div>
-              <h3 className={cn("text-base font-semibold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors")}>
+              <h3 className={cn("text-base font-semibold text-white mb-2 group-hover:text-green-400 transition-colors")}>
                 {feature.title}
               </h3>
-              <p className={cn("text-sm text-slate-500 leading-relaxed")}>
+              <p className={cn("text-sm text-gray-500 leading-relaxed")}>
                 {feature.description}
               </p>
             </div>
@@ -58,7 +58,7 @@ export const FeaturesSub = () => {
       </div>
 
       {/* Bottom separator */}
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-green-900/40 to-transparent" />
     </section>
   );
 };

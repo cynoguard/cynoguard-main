@@ -12,25 +12,26 @@ const Navbar = () => {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const products = [
     {
       name: "Bot Detection",
       href: "/bot-detection",
-      icon: <Zap className="w-4 h-4" />,
+      icon: <Zap className="w-4 h-4 text-green-500" />,
       description: "Advanced AI-powered bot detection",
     },
     {
       name: "Domain Monitoring",
       href: "/domain-monitoring",
-      icon: <Shield className="w-4 h-4" />,
+      icon: <Shield className="w-4 h-4 text-green-500" />,
       description: "Real-time domain threat monitoring",
     },
     {
       name: "Social Media Monitoring",
       href: "/social-media-monitoring",
-      icon: <Globe className="w-4 h-4" />,
+      icon: <Globe className="w-4 h-4 text-green-500" />,
       description: "Track phishing discussions across platforms",
     },
   ];
@@ -52,7 +53,12 @@ const Navbar = () => {
     timeoutRef.current = setTimeout(() => setIsProductsOpen(false), 150);
   };
 
-  // Close mobile menu on route change / resize
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setIsMobileOpen(false);
@@ -64,7 +70,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isMobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -72,28 +77,33 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 w-full bg-white/95 backdrop-blur-sm border-b border-slate-100 z-50">
+      <nav className={cn(
+        "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300",
+        scrolled
+          ? "bg-[#020812]/95 backdrop-blur-md border-b border-green-900/30 shadow-lg shadow-black/50"
+          : "bg-[#020812]/80 backdrop-blur-sm border-b border-gray-900"
+      )}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center py-4">
 
             {/* Logo */}
             <div className="flex items-center gap-8">
-              <Link href="/" className="flex items-center gap-2">
+              <Link href="/" className="flex items-center gap-2 group">
                 <Image src={cynoguardlogo} alt="CynoGuard logo" width={24} height={24} />
-                <span className="font-bold text-xl tracking-tight text-slate-900">
+                <span className="font-bold text-xl tracking-tight text-white group-hover:text-green-400 transition-colors">
                   CynoGuard
                 </span>
               </Link>
 
               {/* Desktop Nav */}
-              <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+              <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-400">
                 {/* Products dropdown */}
                 <div
                   className="relative"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <button className="flex items-center gap-1 hover:text-slate-900">
+                  <button className="flex items-center gap-1 hover:text-white transition-colors">
                     Products
                     <ChevronDown
                       size={16}
@@ -103,17 +113,17 @@ const Navbar = () => {
 
                   {isProductsOpen && (
                     <div className="absolute top-full left-0 pt-2 w-64">
-                      <div className="bg-white rounded-lg border border-slate-200 shadow-lg py-2">
+                      <div className="bg-[#0a1120] rounded-lg border border-gray-800 shadow-xl shadow-black/50 py-2">
                         {products.map((product) => (
                           <Link
                             key={product.name}
                             href={product.href}
-                            className="flex items-start gap-3 px-4 py-3 hover:bg-slate-100"
+                            className="flex items-start gap-3 px-4 py-3 hover:bg-gray-800/60 transition-colors group"
                           >
                             {product.icon}
                             <div>
-                              <div className="font-medium text-slate-900">{product.name}</div>
-                              <div className="text-xs text-slate-500">{product.description}</div>
+                              <div className="font-medium text-white text-sm group-hover:text-green-400 transition-colors">{product.name}</div>
+                              <div className="text-xs text-gray-500">{product.description}</div>
                             </div>
                           </Link>
                         ))}
@@ -123,7 +133,7 @@ const Navbar = () => {
                 </div>
 
                 {navLinks.map((link) => (
-                  <Link key={link.label} href={link.href} className="hover:text-slate-900 transition-colors">
+                  <Link key={link.label} href={link.href} className="hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 ))}
@@ -134,18 +144,18 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-6">
               <Link
                 href="/sign-up"
-                className="text-sm font-medium text-slate-700 hover:text-slate-900 flex items-center gap-1"
+                className="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1 transition-colors"
               >
                 Sign in <ChevronRight size={16} />
               </Link>
-              <Button className="bg-[#0a1120] hover:bg-[#1a253a] text-white rounded-md px-4 py-2 h-auto">
+              <Button className="bg-green-600 hover:bg-green-500 text-white rounded-md px-4 py-2 h-auto shadow-lg shadow-green-900/30 transition-all hover:shadow-green-800/40">
                 Contact Sales
               </Button>
             </div>
 
             {/* Hamburger — mobile */}
             <button
-              className="md:hidden p-2 rounded-md text-slate-700 hover:bg-slate-100 transition-colors"
+              className="md:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
               onClick={() => setIsMobileOpen((prev) => !prev)}
               aria-label="Toggle menu"
             >
@@ -158,25 +168,22 @@ const Navbar = () => {
       {/* Mobile menu overlay */}
       {isMobileOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
-          {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             onClick={() => setIsMobileOpen(false)}
           />
 
-          {/* Drawer */}
-          <div className="absolute top-0 left-0 right-0 bg-white border-b border-slate-200 shadow-xl pt-20 pb-8 px-6">
+          <div className="absolute top-0 left-0 right-0 bg-[#0a1120] border-b border-gray-800 shadow-xl pt-20 pb-8 px-6">
             <div className="flex flex-col gap-1">
 
-              {/* Products accordion */}
               <button
-                className="flex items-center justify-between py-3 text-base font-medium text-slate-700 hover:text-slate-900"
+                className="flex items-center justify-between py-3 text-base font-medium text-gray-300 hover:text-white transition-colors"
                 onClick={() => setIsMobileProductsOpen((prev) => !prev)}
               >
                 Products
                 <ChevronDown
                   size={18}
-                  className={cn("transition-transform text-slate-400", isMobileProductsOpen && "rotate-180")}
+                  className={cn("transition-transform text-gray-500", isMobileProductsOpen && "rotate-180")}
                 />
               </button>
 
@@ -187,7 +194,7 @@ const Navbar = () => {
                       key={product.name}
                       href={product.href}
                       onClick={() => setIsMobileOpen(false)}
-                      className="flex items-center gap-2 py-2.5 text-sm text-slate-600 hover:text-slate-900"
+                      className="flex items-center gap-2 py-2.5 text-sm text-gray-400 hover:text-green-400 transition-colors"
                     >
                       {product.icon}
                       {product.name}
@@ -201,16 +208,15 @@ const Navbar = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsMobileOpen(false)}
-                  className="py-3 text-base font-medium text-slate-700 hover:text-slate-900 border-t border-slate-100"
+                  className="py-3 text-base font-medium text-gray-400 hover:text-white border-t border-gray-800 transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
 
-              {/* Mobile CTAs */}
-              <div className="pt-6 flex flex-col gap-3 border-t border-slate-100 mt-2">
+              <div className="pt-6 flex flex-col gap-3 border-t border-gray-800 mt-2">
                 <Button
-                  className="w-full bg-[#0a1120] hover:bg-[#1a253a] text-white rounded-md py-5 text-base font-medium"
+                  className="w-full bg-green-600 hover:bg-green-500 text-white rounded-md py-5 text-base font-medium shadow-lg shadow-green-900/30"
                   asChild
                 >
                   <Link href="/sign-up" onClick={() => setIsMobileOpen(false)}>
@@ -219,7 +225,7 @@ const Navbar = () => {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full border-slate-200 text-slate-700 rounded-md py-5 text-base font-medium bg-transparent"
+                  className="w-full border-gray-700 text-gray-300 rounded-md py-5 text-base font-medium bg-transparent hover:bg-gray-800"
                   asChild
                 >
                   <Link href="/sign-up" onClick={() => setIsMobileOpen(false)}>
