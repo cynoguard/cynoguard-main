@@ -166,7 +166,8 @@ export function SignupForm({
        if(response.data.data?.organizations?.length > 0){
          setOrganizations(response.data.data.organizations);
         }else{
-         return window.location.href = `http://localhost:3000/onboarding/${response.data.data.token}/setup-organization`;
+          const safeToken = response.data.data.token;
+         return window.location.href = `http://localhost:3000/onboarding/${safeToken}/setup-organization`;
         }      
       } else {
         throw new Error("Failed to register user");
@@ -246,9 +247,9 @@ export function SignupForm({
             key={org.id}
             onClick={() => {
               if (org.is_onboarded) {
-                window.location.href = `http://localhost:3000/${org.name.trim().toLowerCase()}/projects`
+                window.location.href = `http://localhost:3000/auth-bridge?token=${org.auth.custom_token}&org=${org.name.trim().toLowerCase()}`
               } else {
-                window.location.href = `http://localhost:3000/onboarding/setup-organization/${org.session_token}`
+                window.location.href = `http://localhost:3000/onboarding/${org.session_token}/setup-organization`
               }
             }}
             className="
@@ -289,7 +290,7 @@ export function SignupForm({
   </DialogContent>
 </Dialog>
       <Card className="border-0 shadow-xl shadow-black/5 dark:shadow-black/20 backdrop-blur-sm bg-card/80">
-      
+
         <CardHeader className="text-center space-y-1 pb-6">
           <CardTitle className="text-2xl font-bold tracking-tight">Create your account</CardTitle>
           <CardDescription className="text-sm">
