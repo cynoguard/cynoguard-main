@@ -1,26 +1,24 @@
 import Link from "next/link";
-import { Twitter, Instagram, Linkedin, Youtube, Pentagon } from "lucide-react";
+import { Twitter, Instagram, Linkedin, Youtube, Terminal } from "lucide-react";
 
 const footerLinks = {
   Product: [
-    { name: "Features", href: "#" },
-    { name: "Integrations", href: "#" },
-    { name: "Updates", href: "#" },
-    { name: "FAQ", href: "#" },
+    { name: "Features", href: "/#features" },
+    { name: "Integrations", href: "/integrations" },
     { name: "Pricing", href: "/pricing" },
+    { name: "Docs", href: "/docs" },
+    { name: "Blog", href: "/blog" },
   ],
   Company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "About", href: "/about" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
   ],
   Resources: [
-    { name: "Docs", href: "#" },
-    { name: "Community", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "Support", href: "/support" }, // ✅ support portal
+    { name: "Docs", href: "/docs" },
+    { name: "Integrations", href: "/integrations" },
+    { name: "Support", href: "/support" },
+    { name: "Blog", href: "/blog" },
   ],
   Legal: [
     { name: "Privacy", href: "/privacy-policy" },
@@ -29,39 +27,43 @@ const footerLinks = {
 };
 
 const socialIcons = [
-  { icon: Twitter, href: "#" },
-  { icon: Instagram, href: "#" },
-  { icon: Linkedin, href: "#" },
-  { icon: Youtube, href: "#" },
-  { icon: Pentagon, href: "#" },
+  { icon: Twitter, href: "https://twitter.com/cynoguard", label: "Twitter" },
+  { icon: Instagram, href: "https://instagram.com/cynoguard", label: "Instagram" },
+  { icon: Linkedin, href: "https://linkedin.com/company/cynoguard", label: "LinkedIn" },
+  { icon: Youtube, href: "https://youtube.com/@cynoguard", label: "YouTube" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-20">
+    <footer className="bg-[#020812] text-white py-20 border-t border-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
           {/* Left */}
           <div className="lg:col-span-4">
-            <p className="text-slate-400 text-lg mb-8 max-w-xs leading-relaxed">
-              Effortlessly protect your entire online business workflow
+            <div className="flex items-center gap-2 mb-4">
+              <Terminal className="w-5 h-5 text-green-500" />
+              <span className="font-bold text-lg text-white">CynoGuard</span>
+            </div>
+            <p className="text-gray-500 text-sm mb-8 max-w-xs leading-relaxed">
+              Effortlessly protect your entire online business workflow with AI-powered security intelligence.
             </p>
 
-            <div className="mb-10 w-16 h-16 text-[#bef227]">
-              <svg viewBox="0 0 100 100" fill="currentColor">
-                <path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" />
-              </svg>
-            </div>
-
             {/* Social Icons */}
-            <div className="flex flex-wrap gap-6 text-slate-400">
-              {socialIcons.map((item, i) => {
+            <div className="flex flex-wrap gap-4 text-gray-600">
+              {socialIcons.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <Link key={i} href={item.href} className="hover:text-white transition-colors">
-                    <Icon size={20} />
-                  </Link>
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.label}
+                    className="hover:text-green-400 transition-colors p-2 rounded-lg hover:bg-green-950/30 border border-transparent hover:border-green-900/40"
+                  >
+                    <Icon size={18} />
+                  </a>
                 );
               })}
             </div>
@@ -71,11 +73,11 @@ export default function Footer() {
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-6">
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
-                <h3 className="font-bold mb-6">{title}</h3>
-                <ul className="space-y-3 text-sm text-slate-500">
+                <h3 className="font-bold mb-6 text-gray-300 text-sm uppercase tracking-wider font-mono text-[11px]">{title}</h3>
+                <ul className="space-y-3 text-sm text-gray-600">
                   {links.map((link) => (
                     <li key={link.name}>
-                      <Link href={link.href} className="hover:text-white transition-colors">
+                      <Link href={link.href} className="hover:text-green-400 transition-colors">
                         {link.name}
                       </Link>
                     </li>
@@ -87,11 +89,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-6 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+        <div className="mt-16 pt-6 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-700 font-mono">
           <p>© 2026 CynoGuard Inc. All rights reserved.</p>
-          <p className="flex items-center gap-1">
+          <p className="flex items-center gap-2">
             System status
-            <span className="w-2 h-2 bg-green-400 rounded-full" />
+            <span className="flex items-center gap-1 text-green-500">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              Operational
+            </span>
           </p>
         </div>
       </div>
