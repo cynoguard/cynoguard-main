@@ -1,26 +1,24 @@
 import Link from "next/link";
-import { Twitter, Instagram, Linkedin, Youtube, Pentagon } from "lucide-react";
+import { Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const footerLinks = {
   Product: [
-    { name: "Features", href: "#" },
-    { name: "Integrations", href: "#" },
-    { name: "Updates", href: "#" },
-    { name: "FAQ", href: "#" },
+    { name: "Features", href: "/#features" },
+    { name: "Integrations", href: "/integrations" },
     { name: "Pricing", href: "/pricing" },
+    { name: "Docs", href: "/docs" },
+    { name: "Blog", href: "/blog" },
   ],
   Company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "About", href: "/about" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
   ],
   Resources: [
-    { name: "Docs", href: "#" },
-    { name: "Community", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "Support", href: "/support" }, // ✅ support portal
+    { name: "Docs", href: "/docs" },
+    { name: "Integrations", href: "/integrations" },
+    { name: "Support", href: "/support" },
+    { name: "Blog", href: "/blog" },
   ],
   Legal: [
     { name: "Privacy", href: "/privacy-policy" },
@@ -29,11 +27,10 @@ const footerLinks = {
 };
 
 const socialIcons = [
-  { icon: Twitter, href: "#" },
-  { icon: Instagram, href: "#" },
-  { icon: Linkedin, href: "#" },
-  { icon: Youtube, href: "#" },
-  { icon: Pentagon, href: "#" },
+  { icon: Twitter, href: "https://twitter.com/cynoguard", label: "Twitter" },
+  { icon: Instagram, href: "https://instagram.com/cynoguard", label: "Instagram" },
+  { icon: Linkedin, href: "https://linkedin.com/company/cynoguard", label: "LinkedIn" },
+  { icon: Youtube, href: "https://youtube.com/@cynoguard", label: "YouTube" },
 ];
 
 export default function Footer() {
@@ -56,12 +53,19 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex flex-wrap gap-6 text-slate-400">
-              {socialIcons.map((item, i) => {
+              {socialIcons.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <Link key={i} href={item.href} className="hover:text-white transition-colors">
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.label}
+                    className="hover:text-white transition-colors"
+                  >
                     <Icon size={20} />
-                  </Link>
+                  </a>
                 );
               })}
             </div>
@@ -98,5 +102,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-

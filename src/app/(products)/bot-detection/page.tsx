@@ -2,18 +2,17 @@ import type { Metadata } from "next"
 import { BotDetectionHero } from "@/components/marketing/bot-detection/BotDetectionHero"
 import { BotDetectionFeatureGrid } from "@/components/marketing/bot-detection/BotDetectionFeatureGrid"
 import { BotDetectionHowItWorks } from "@/components/marketing/bot-detection/BotDetectionHowItWorks"
-
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Bot Detection | CynoGuard",
-  description:
-    "Real-time ML-powered bot detection that identifies and blocks automated threats with sub-millisecond latency. Protect your platform without compromising user experience.",
+  description: "Real-time ML-powered bot detection that identifies and blocks automated threats with sub-millisecond latency.",
 }
 
 export default function BotDetectionPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      
       <BotDetectionHero />
       <BotDetectionFeatureGrid />
       <BotDetectionHowItWorks />
@@ -25,21 +24,19 @@ export default function BotDetectionPage() {
             Ready to stop bots in their tracks?
           </h2>
           <p className="mt-4 text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Join thousands of companies that trust CynoGuard to protect their
-            platforms from automated threats.
+            Join thousands of companies that trust CynoGuard to protect their platforms from automated threats.
           </p>
           <div className="mt-10">
-            <a
-              href="#"
+            <Link
+              href="/sign-up"
               className="inline-flex items-center justify-center bg-[#0a1120] hover:bg-[#1a253a] text-white px-8 py-5 rounded-md text-base font-medium transition-colors"
             >
               Start your free trial
-            </a>
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
-
-      
     </main>
   )
 }
