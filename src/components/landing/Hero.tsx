@@ -68,7 +68,7 @@ function TerminalPreview() {
 
 const Hero = () => {
   return (
-    <section className={cn("relative w-full pt-24 pb-12 md:pt-36 md:pb-8 overflow-hidden bg-[#020812]")}>
+    <section className={cn("relative w-full pt-32 pb-20 md:pt-48 md:pb-24 overflow-hidden bg-[#020812]")}>
       <div className="absolute inset-0 bg-grid-dark opacity-80 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(34,197,94,0.08),transparent)] pointer-events-none" />
       <div className="absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full bg-green-500/5 blur-3xl pointer-events-none" />

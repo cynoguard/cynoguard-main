@@ -89,7 +89,7 @@ const Navbar = () => {
             {/* Logo */}
             <div className="flex items-center gap-8">
               <Link href="/" className="flex items-center gap-2 group">
-                <Image src={cynoguardlogo} alt="CynoGuard logo" width={24} height={24} />
+                <Image src={cynoguardlogo} alt="CynoGuard logo" width={24} height={24} className="rounded-full" />
                 <span className="font-bold text-xl tracking-tight text-white group-hover:text-green-400 transition-colors">
                   CynoGuard
                 </span>
@@ -148,8 +148,8 @@ const Navbar = () => {
               >
                 Sign in <ChevronRight size={16} />
               </Link>
-              <Button className="bg-green-600 hover:bg-green-500 text-white rounded-md px-4 py-2 h-auto shadow-lg shadow-green-900/30 transition-all hover:shadow-green-800/40">
-                Contact Sales
+              <Button className="bg-green-600 hover:bg-green-500 text-white rounded-md px-4 py-2 h-auto shadow-lg shadow-green-900/30 transition-all hover:shadow-green-800/40" asChild>
+                <a href="mailto:sales@cynoguard.io">Contact Sales</a>
               </Button>
             </div>
 

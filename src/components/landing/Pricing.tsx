@@ -76,7 +76,7 @@ export const Pricing = () => {
             <Card
               key={plan.name}
               className={cn(
-                "flex flex-col rounded-[2rem] shadow-sm transition-all p-4 min-h-150 border",
+                "flex flex-col rounded-[2rem] shadow-sm transition-all p-4 min-h-[600px] border",
                 plan.popular
                   ? "bg-[#050f08] border-green-700/50 shadow-2xl shadow-green-900/20 glow-green"
                   : "bg-gray-900/80 border-gray-800 text-white"
