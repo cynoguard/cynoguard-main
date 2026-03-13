@@ -105,7 +105,7 @@ export default async function BlogPostPage({
           {/* Sidebar */}
           <aside className="space-y-5">
             <div className="rounded-xl border border-gray-800 bg-gray-900/60 p-5">
-              <p className="text-xs uppercase tracking-[0.2em] text-green-500 font-mono mb-4">// Key takeaways</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-green-500 font-mono mb-4">Key takeaways</p>
               <ul className="space-y-3">
                 {[
                   "Behaviour signals are harder to spoof than headers.",
@@ -120,7 +120,7 @@ export default async function BlogPostPage({
             </div>
 
             <div className="rounded-xl border border-gray-800 bg-gray-900/60 p-5">
-              <p className="text-xs uppercase tracking-[0.2em] text-green-500 font-mono mb-3">// Subscribe</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-green-500 font-mono mb-3">Subscribe</p>
               <p className="text-sm text-gray-500 mb-4">Get monthly research updates on bot defence.</p>
               <Button className="w-full bg-green-600 hover:bg-green-500 text-white">
                 Join the newsletter
@@ -135,7 +135,7 @@ export default async function BlogPostPage({
         <section className="relative z-10 max-w-5xl mx-auto px-6 pb-20">
           <div className="border-t border-gray-800 pt-10">
             <div className="flex items-center justify-between mb-6">
-              <p className="text-sm uppercase tracking-[0.2em] text-green-500 font-mono">// Related posts</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-green-500 font-mono"> Related posts</p>
               <Button asChild variant="ghost" className="text-gray-500 hover:text-green-400 font-mono text-sm">
                 <Link href="/blog">View all posts</Link>
               </Button>
