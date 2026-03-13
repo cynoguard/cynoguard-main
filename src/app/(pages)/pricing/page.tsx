@@ -1,6 +1,5 @@
-import React from 'react';
-import Pricing from "@/components/landing/Pricing";
 import FAQ from "@/components/landing/FAQ";
+import Pricing from "@/components/landing/Pricing";
 import { SignupCTA } from "@/components/landing/SignupCTA";
 import { cn } from "@/lib/utils";
 import { Check } from 'lucide-react';
@@ -14,7 +13,7 @@ const Page = () => {
         <div className="absolute inset-0 bg-grid-dark opacity-70 pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-10%,rgba(34,197,94,0.07),transparent)] pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Pricing</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Pricing</p>
           <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.05]">Simple, transparent pricing</h1>
           <p className="mt-4 text-lg text-gray-400 max-w-xl mx-auto">Start free. Scale as you grow. No hidden fees.</p>
         </div>
@@ -26,7 +25,7 @@ const Page = () => {
       <section className={cn("py-24 border-t border-gray-900")}>
         <div className={cn("max-w-6xl mx-auto px-4 sm:px-6")}>
           <div className={cn("text-center mb-16")}>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Compare</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Compare</p>
             <h2 className={cn("text-4xl md:text-5xl font-bold text-white tracking-tight mb-4")}>Compare Plans</h2>
             <p className={cn("text-gray-400 text-lg max-w-2xl mx-auto")}>See what&apos;s included in each plan</p>
           </div>
