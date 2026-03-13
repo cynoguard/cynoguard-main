@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { ArrowRight, MapPin, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { SignupCTA } from "@/components/landing/SignupCTA";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Clock, MapPin } from "lucide-react";
+import Link from "next/link";
 
 const openRoles = [
   { title: "Senior Security Engineer", team: "Engineering", location: "Remote", type: "Full-time", description: "Build and improve our threat detection pipeline, work on ML models for bot classification, and harden our infrastructure." },
@@ -44,7 +44,7 @@ export default function CareersPage() {
       <section className="relative z-10 py-20 border-t border-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Why us</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Why us</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Why CynoGuard?</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -63,7 +63,7 @@ export default function CareersPage() {
       <section className="relative z-10 py-20 border-t border-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="mb-12">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Open positions</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Open positions</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Join the team</h2>
           </div>
           <div className="space-y-4">
