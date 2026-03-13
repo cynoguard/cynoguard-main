@@ -163,10 +163,19 @@
 // }
 
 
-const Page = () => {
-  return (
-    <div>Page</div>
-  )
-}
+import { getPostBySlug } from "@/sanity/queries";
+import { notFound } from "next/navigation";
 
-export default Page
+export const revalidate = 60;
+
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post = await getPostBySlug(params.slug);
+
+  if (!post) notFound();
+
+  return <div>{post.title}</div>;
+}
