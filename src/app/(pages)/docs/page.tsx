@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { ArrowRight, BookOpen, Code2, Terminal, Zap, Shield, Globe, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { SignupCTA } from "@/components/landing/SignupCTA";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, BookOpen, ChevronRight, Code2, Globe, Shield, Terminal, Zap } from "lucide-react";
+import Link from "next/link";
 
 const sections = [
   { icon: BookOpen, title: "Getting Started", description: "Set up CynoGuard in under 10 minutes. Walk through account creation, project setup, and your first monitoring rule.", links: [{ label: "Quick start guide", href: "/support" }, { label: "Dashboard overview", href: "/support" }, { label: "Create your first project", href: "/sign-up" }] },
@@ -76,7 +76,7 @@ export default function DocsPage() {
       <section className="relative z-10 py-20 border-t border-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="mb-12">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Popular guides</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Popular guides</p>
             <h2 className="text-3xl md:text-4xl font-semibold text-white">Step-by-step walkthroughs</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
