@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { SignupCTA } from "@/components/landing/SignupCTA";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { SignupCTA } from "@/components/landing/SignupCTA";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 const categories = ["All", "Alerting", "Cloud", "DevOps", "SIEM", "Communication"];
 
@@ -97,7 +97,7 @@ export default function IntegrationsPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-4 font-mono">// Why integrations matter</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-4 font-mono">Why integrations matter</p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Security that lives where your team works</h2>
               <p className="text-gray-400 text-lg leading-relaxed">The best security tooling is the kind your team actually uses. CynoGuard integrations push the right signal to the right person at the right time.</p>
             </div>
