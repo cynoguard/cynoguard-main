@@ -91,7 +91,7 @@ export function SignupForm({
     };
 
     const response = await axios.post(
-      "http://127.0.0.1:4000/api/auth/sync",
+      "https://api.cynoguard.com/api/auth/sync",
       payload,
       {
         headers: {
