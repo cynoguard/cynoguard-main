@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { RichText } from "@/components/blog/RichText";
+import { Button } from "@/components/ui/button";
+import { getAllSlugs, getPostBySlug, getRelatedPosts } from "@/sanity/queries";
+import { ArrowLeft, Clock } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, Clock } from "lucide-react";
-import { getPostBySlug, getAllSlugs, getRelatedPosts } from "@/sanity/queries";
-import { RichText } from "@/components/blog/RichText";
-import type { Metadata } from "next";
 
 // ISR — revalidates when Sanity webhook fires
 export const revalidate = 60;
@@ -97,7 +98,7 @@ export default async function BlogPostPage({
             {post.body ? (
               <RichText value={post.body as any} />
             ) : (
-              <p className="text-gray-500 font-mono">// No content yet.</p>
+              <p className="text-gray-500 font-mono">No content yet.</p>
             )}
           </article>
 

@@ -1,6 +1,6 @@
 "use client"
-import { useState } from "react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { useState } from "react"
 
 const tabs = ["All", "Getting Started", "Product", "Billing", "Support"] as const
 type TabKey = (typeof tabs)[number]
@@ -26,7 +26,7 @@ export function SupportFAQ() {
     <section className="py-20 md:py-28 bg-[#020812] border-t border-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// FAQ</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">FAQ</p>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white text-balance">Frequently asked questions</h2>
           <p className="mt-4 text-lg text-gray-400 leading-relaxed">Quick answers to the most common questions about CynoGuard.</p>
         </div>

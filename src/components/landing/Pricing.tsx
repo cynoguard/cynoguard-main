@@ -1,8 +1,7 @@
-import React from 'react';
-import { Check } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { Check } from 'lucide-react';
 import Link from "next/link";
 
 const plans = [
@@ -60,7 +59,7 @@ export const Pricing = () => {
       <div className={cn("max-w-6xl mx-auto px-4 sm:px-6")}>
         <div className={cn("text-center mb-20")}>
           <div className={cn("inline-block px-4 py-1.5 mb-6 border border-green-900/60 rounded-full bg-green-950/40 shadow-sm")}>
-            <span className={cn("text-[12px] font-medium text-green-300/80 font-mono")}>// Boost your productivity</span>
+            <span className={cn("text-[12px] font-medium text-green-300/80 font-mono")}>Boost your productivity</span>
           </div>
           <h2 className={cn("text-5xl md:text-6xl font-bold text-white tracking-tight mb-8")}>
             A more effective way to <br /> track threats

@@ -1,4 +1,4 @@
-import { Shield, Zap, BarChart3, Fingerprint, Globe, Settings } from "lucide-react"
+import { BarChart3, Fingerprint, Globe, Settings, Shield, Zap } from "lucide-react"
 
 const features = [
   { icon: Shield, title: "ML-Powered Detection", description: "Leverage advanced machine learning models trained on billions of requests to accurately distinguish bots from legitimate users in real time." },
@@ -14,7 +14,7 @@ export function BotDetectionFeatureGrid() {
     <section className="py-20 md:py-28 bg-[#020812] border-t border-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Features</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Features</p>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white text-balance">Everything you need to fight bots</h2>
           <p className="mt-4 text-lg text-gray-400 leading-relaxed">A complete toolkit to detect, analyze, and block automated threats across your entire infrastructure.</p>
         </div>

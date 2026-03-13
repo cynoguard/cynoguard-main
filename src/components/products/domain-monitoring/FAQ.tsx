@@ -15,7 +15,7 @@ const FAQ = () => {
     <section className={cn("py-20 bg-[#020812] border-t border-gray-900")}>
       <div className={cn("max-w-4xl mx-auto px-4 sm:px-6")}>
         <div className={cn("text-center mb-12")}>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// FAQ</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">FAQ</p>
           <h2 className={cn("text-3xl md:text-4xl font-semibold text-white tracking-tight")}>Domain monitoring questions, answered</h2>
           <p className={cn("mt-3 text-base text-gray-400")}>Everything you need to understand how monitoring works and how teams respond.</p>
         </div>

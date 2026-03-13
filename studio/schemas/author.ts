@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // schemas/author.ts
 const author = {
   name: "author",

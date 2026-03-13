@@ -1,5 +1,5 @@
-import { Bell, FileSearch, Radar } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Bell, FileSearch, Radar } from "lucide-react";
 
 const steps = [
   { title: "Connect your brand portfolio", description: "Add domains, trademarks, and brand keywords to define your risk perimeter.", icon: <Radar className="h-5 w-5 text-green-500" /> },
@@ -12,7 +12,7 @@ const HowItWorks = () => {
     <section className={cn("py-20 bg-[#020812] border-t border-gray-900")}>
       <div className={cn("max-w-6xl mx-auto px-4 sm:px-6")}>
         <div className={cn("text-center mb-14")}>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// How it works</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">How it works</p>
           <h2 className={cn("text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight")}>How domain monitoring works</h2>
           <p className={cn("mt-4 text-lg text-gray-400")}>A streamlined workflow that keeps your team ahead of brand abuse.</p>
         </div>

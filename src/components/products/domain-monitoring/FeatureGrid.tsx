@@ -1,5 +1,5 @@
-import { AlertTriangle, Fingerprint, Globe, Mail, Network, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { AlertTriangle, Fingerprint, Globe, Mail, Network, Shield } from "lucide-react";
 
 const items = [
   { title: "Registry & zone visibility", description: "Watch gTLD, ccTLD, and IDN registrations with realtime zone-file diffs.", icon: <Globe className="h-5 w-5 text-green-500" /> },
@@ -15,7 +15,7 @@ const FeatureGrid = () => {
     <section className={cn("py-24 bg-[#020812] border-t border-gray-900")}>
       <div className={cn("max-w-6xl mx-auto px-4")}>
         <div className={cn("text-center max-w-3xl mx-auto mb-14")}>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Capabilities</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Capabilities</p>
           <h2 className={cn("mt-2 text-3xl md:text-4xl font-semibold text-white tracking-tight")}>
             A deep dive into domain monitoring, built for security teams
           </h2>

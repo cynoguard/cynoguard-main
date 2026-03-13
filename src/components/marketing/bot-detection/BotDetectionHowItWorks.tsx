@@ -1,5 +1,5 @@
-import { Code2, ScanSearch, ShieldCheck, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ArrowRight, Code2, ScanSearch, ShieldCheck } from "lucide-react"
 import Link from "next/link"
 
 const steps = [
@@ -13,7 +13,7 @@ export function BotDetectionHowItWorks() {
     <section className="py-20 md:py-28 bg-[#020812] border-t border-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// How it works</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">How it works</p>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white text-balance">Up and running in three steps</h2>
           <p className="mt-4 text-lg text-gray-400 leading-relaxed">Get from zero to fully protected in minutes, not weeks.</p>
         </div>

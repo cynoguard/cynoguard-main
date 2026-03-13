@@ -1,6 +1,5 @@
-import React from 'react';
-import { Maximize, Monitor, Moon, Settings2, Zap, Rocket, Languages, Code2 } from 'lucide-react';
 import { cn } from "@/lib/utils";
+import { Code2, Languages, Maximize, Monitor, Moon, Rocket, Settings2, Zap } from 'lucide-react';
 
 const features = [
   { title: "Accessibility first", description: "Fully WCAG 2.0 compliant, made with best a11y practices", icon: Maximize },
@@ -21,7 +20,7 @@ export const FeaturesSub = () => {
 
       <div className={cn("max-w-6xl mx-auto px-4 sm:px-6")}>
         <div className={cn("text-center mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both")}>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Capabilities</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Capabilities</p>
           <h2 className={cn("text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight")}>
             Everything you need.{" "}
             <span className="text-gradient-blue">Nothing you don&apos;t.</span>

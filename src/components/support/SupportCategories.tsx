@@ -1,4 +1,4 @@
-import { BookOpen, Code, CreditCard, LifeBuoy, FileText, Zap, ArrowRight } from "lucide-react"
+import { ArrowRight, BookOpen, Code, CreditCard, FileText, LifeBuoy, Zap } from "lucide-react"
 import Link from "next/link"
 
 const categories = [
@@ -15,7 +15,7 @@ export function SupportCategories() {
     <section className="py-20 md:py-28 bg-[#020812] border-t border-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Categories</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Categories</p>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white text-balance">Browse by category</h2>
           <p className="mt-4 text-lg text-gray-400 leading-relaxed">Jump straight to the topic you need help with.</p>
         </div>
