@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // schemas/category.ts
 const category = {
   name: "category",

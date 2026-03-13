@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // schemas/post.ts — Blog post schema
 const post = {
   name: "post",

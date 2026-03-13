@@ -1,5 +1,5 @@
-import { MessageSquare, Mail, Clock, Shield, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Clock, Mail, MessageSquare, Shield, Users } from "lucide-react"
 
 const channels = [
   { icon: MessageSquare, title: "Live Chat", description: "Chat with our team in real-time during business hours.", action: "Start chat", href: "/contact", primary: true },
@@ -19,7 +19,7 @@ export function SupportTicketCTA() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_100%,rgba(34,197,94,0.06),transparent)] pointer-events-none" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Contact</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Contact</p>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white text-balance">Still need help?</h2>
           <p className="mt-4 text-lg text-gray-400 leading-relaxed">Choose the channel that works best for you. Our team is ready to assist.</p>
         </div>

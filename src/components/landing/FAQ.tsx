@@ -39,7 +39,7 @@ export function FAQ() {
       <div className={cn("max-w-4xl mx-auto px-4 sm:px-6")}>
         {/* Section Header */}
         <div className={cn("text-center mb-16")}>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// FAQ</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">FAQ</p>
           <h2 className={cn("text-2xl md:text-5xl font-bold text-white tracking-tight")}>
             Questions and Answers
           </h2>

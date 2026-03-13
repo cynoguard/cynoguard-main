@@ -1,8 +1,8 @@
-﻿import Link from "next/link";
+﻿import { PostCard } from "@/components/blog/PostCard";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/sanity/queries";
-import { PostCard } from "@/components/blog/PostCard";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 // ISR — revalidates when Sanity webhook fires
 export const revalidate = 60;
@@ -34,7 +34,7 @@ export default async function BlogIndexPage() {
       {/* Header */}
       <section className="relative z-10 border-b border-gray-800 pt-24 pb-12 md:pt-32">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Blog</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Blog</p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-5xl font-semibold text-white">
@@ -66,7 +66,7 @@ export default async function BlogIndexPage() {
                   <div className="absolute inset-0 bg-grid-dark opacity-30" />
                   <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-green-500/40" />
                   <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-green-500/40" />
-                  <p className="text-xs uppercase tracking-[0.2em] text-green-400 font-mono relative z-10">// Featured</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-green-400 font-mono relative z-10">Featured</p>
                   <h2 className="mt-6 text-3xl font-semibold relative z-10">{featuredPost.title}</h2>
                   <p className="mt-4 text-sm text-gray-400 font-mono relative z-10">
                     {featuredPost.category} · {featuredPost.readTime}
@@ -105,7 +105,7 @@ export default async function BlogIndexPage() {
         ) : (
           /* Fallback when Sanity has no posts yet */
           <p className="text-center text-gray-600 font-mono py-12">
-            // No posts published yet. Add content in Sanity Studio.
+             No posts published yet. Add content in Sanity Studio.
           </p>
         )}
       </section>
@@ -118,7 +118,7 @@ export default async function BlogIndexPage() {
           <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-green-500/40" />
           <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-xl">
-              <p className="text-sm uppercase tracking-[0.2em] text-green-500 font-mono">// Newsletter</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-green-500 font-mono">Newsletter</p>
               <h2 className="mt-4 text-3xl font-semibold text-white">Get the bot defense briefing every month.</h2>
               <p className="mt-3 text-gray-400">Analysis, field lessons, and new research on stopping automation abuse.</p>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { cn } from "@/lib/utils";
 
 const sections = [
@@ -23,7 +23,7 @@ const Page = () => {
       <div className="absolute inset-0 bg-grid-dark opacity-40 pointer-events-none" />
       <div className={cn("relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-24")}>
         <div className={cn("mb-12 border-b border-gray-800 pb-8")}>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">// Legal</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-green-500 mb-3 font-mono">Legal</p>
           <h1 className={cn("text-4xl md:text-5xl font-bold text-white tracking-tight mb-4")}>Terms of Service</h1>
           <p className={cn("text-gray-500 text-sm font-mono")}>
             Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
