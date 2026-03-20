@@ -4,11 +4,23 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        // Allows Sanity CDN images to load with next/image
         protocol: "https",
         hostname: "cdn.sanity.io",
       },
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin-allow-popups",
+          },
+        ],
+      },
+    ];
   },
 };
 
