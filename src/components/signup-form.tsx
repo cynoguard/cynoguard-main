@@ -108,7 +108,7 @@ export function SignupForm({
       } else {
         const safeToken = response.data.data.token;
         // Using your preferred onboarding path from the Google logic
-        window.location.href = `http://localhost:3000/onboarding/${safeToken}/setup-organization`;
+        window.location.href = `https://api.cynoguard.com/onboarding/${safeToken}/setup-organization`;
       }
     } else {
       throw new Error("Failed to register user");
@@ -143,19 +143,23 @@ export function SignupForm({
     }
   }
 
-  const handleGoogleSignIn = async () => {
-    setLoading(true);
-    try {
-      const provider = new GoogleAuthProvider();
-      const userCredential = await signInWithPopup(auth, provider);
+const handleGoogleSignIn = () => {
+  setLoading(true);
+  const provider = new GoogleAuthProvider();
+
+  // signInWithPopup called synchronously — no await before it
+  signInWithPopup(auth, provider)
+    .then(async (userCredential) => {
       await syncWithBackend(userCredential.user);
-    } catch (error) {
+    })
+    .catch((error) => {
       console.error(error);
       setError("An unexpected error occurred. Please try again.");
-    } finally {
+    })
+    .finally(() => {
       setLoading(false);
-    }
-  }
+    });
+};
 
   const handleGitHubSignIn = async () => {
     setLoading(true);
@@ -188,9 +192,9 @@ export function SignupForm({
                 key={org.id}
                 onClick={() => {
                   if (org.is_onboarded) {
-                    window.location.href = `http://localhost:3000/auth-bridge?token=${org.auth.custom_token}&org=${org.name.trim().toLowerCase()}`
+                    window.location.href = `https://console.cynoguard.com/auth-bridge?token=${org.auth.custom_token}&org=${org.name.trim().toLowerCase()}`
                   } else {
-                    window.location.href = `http://localhost:3000/onboarding/${org.session_token}/setup-organization`
+                    window.location.href = `http://console.cynoguard.com/onboarding/${org.session_token}/setup-organization`
                   }
                 }}
                 className="group p-4 border rounded-xl cursor-pointer transition-all hover:bg-muted hover:border-primary hover:shadow-sm"
