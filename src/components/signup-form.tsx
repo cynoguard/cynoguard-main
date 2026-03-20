@@ -108,7 +108,7 @@ export function SignupForm({
       } else {
         const safeToken = response.data.data.token;
         // Using your preferred onboarding path from the Google logic
-        window.location.href = `https://api.cynoguard.com/onboarding/${safeToken}/setup-organization`;
+        window.location.href = `https://console.cynoguard.com/onboarding/${safeToken}/setup-organization`;
       }
     } else {
       throw new Error("Failed to register user");
