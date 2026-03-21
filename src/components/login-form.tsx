@@ -51,7 +51,7 @@ export function LoginForm({
     };
 
     const response = await axios.post(
-      "http://127.0.0.1:4000/api/auth/sync",
+      "https://api.cynoguard.com/api/auth/sync",
       payload,
       {
         headers: {
@@ -68,7 +68,7 @@ export function LoginForm({
       } else {
         const safeToken = response.data.data.token;
         // Consistent with signup redirect
-        window.location.href = `http://localhost:3000/onboarding/${safeToken}/setup-organization`;
+        window.location.href = `https://console.cynoguard.com/onboarding/${safeToken}/setup-organization`;
       }
     } else {
       throw new Error("Authentication sync failed");
@@ -145,9 +145,9 @@ export function LoginForm({
                 key={org.id}
                 onClick={() => {
                   if (org.is_onboarded) {
-                    window.location.href = `http://localhost:3000/auth-bridge?token=${org.auth.custom_token}&org=${org.name.trim().toLowerCase()}`
+                    window.location.href = `https://console.cynoguard.com/auth-bridge?token=${org.auth.custom_token}&org=${org.name.trim().toLowerCase()}`
                   } else {
-                    window.location.href = `http://localhost:3000/onboarding/${org.session_token}/setup-organization`
+                    window.location.href = `https://console.cynoguard.com/onboarding/${org.session_token}/setup-organization`
                   }
                 }}
                 className="group p-4 border border-gray-700 rounded-xl cursor-pointer transition-all hover:bg-gray-800 hover:border-green-500"

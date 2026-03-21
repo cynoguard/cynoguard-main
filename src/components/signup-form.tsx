@@ -188,7 +188,7 @@ export function SignupForm({
                   if (org.is_onboarded) {
                     window.location.href = `https://console.cynoguard.com/auth-bridge?token=${org.auth.custom_token}&org=${org.name.trim().toLowerCase()}`
                   } else {
-                    window.location.href = `http://console.cynoguard.com/onboarding/${org.session_token}/setup-organization`
+                    window.location.href = `https://console.cynoguard.com/onboarding/${org.session_token}/setup-organization`
                   }
                 }}
                 className="group p-4 border border-gray-700 rounded-xl cursor-pointer transition-all hover:bg-gray-800 hover:border-green-500"
