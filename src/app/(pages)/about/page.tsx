@@ -16,7 +16,7 @@ const team = [
   { name: "Vihagi Dawalagala", role: "Frontend Lead", initials: "VD" },
   { name: "Yoshan Jayasinghe", role: "Feature Lead", initials: "YJ" },
   { name: "Yugeeth Damsuka", role: "Testing Lead", initials: "YD" },
-  { name: "Sasmitha Wijesinghe", role: "Testing Lead", initials: "SW" },
+  { name: "Sasmitha Wijesinghe", role: "Marketing Lead", initials: "SW" },
 ];
 
 export default function AboutPage() {
