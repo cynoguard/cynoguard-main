@@ -11,12 +11,12 @@ const values = [
 ];
 
 const team = [
-  { name: "Kaveesha Wijetunge", role: "Founder & CEO", initials: "KW" },
-  { name: "Sarah Chen", role: "Head of Engineering", initials: "SC" },
-  { name: "Marcus Reid", role: "Head of Threat Intelligence", initials: "MR" },
-  { name: "Priya Nair", role: "Head of Product", initials: "PN" },
-  { name: "Jonas Weber", role: "Lead Security Researcher", initials: "JW" },
-  { name: "Amina Diallo", role: "Head of Customer Success", initials: "AD" },
+  { name: "Mahima Sanketh", role: "Team Leader", initials: "MS" },
+  { name: "Kaveesh Wijetunge", role: "Backend Lead", initials: "KW" },
+  { name: "Vihagi Dawalagala", role: "Frontend Lead", initials: "VD" },
+  { name: "Yoshan Jayasinghe", role: "Feature Lead", initials: "YJ" },
+  { name: "Yugeeth Damsuka", role: "Testing Lead", initials: "YD" },
+  { name: "Sasmitha Wijesinghe", role: "Testing Lead", initials: "SW" },
 ];
 
 export default function AboutPage() {
