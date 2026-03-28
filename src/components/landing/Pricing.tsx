@@ -46,7 +46,7 @@ const plans = [
       "Custom Security Rules",
       "Integrations",
       "Dedicated account manager",
-      "Custom fields",
+      "Custom Fields",
       "Advanced analytics",
       "Export capabilities",
       "API access",
