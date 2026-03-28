@@ -21,7 +21,7 @@ export const SignupCTA = () => {
 
         {/* Subtext */}
         <p className="text-slate-500 text-lg md:text-lg font-medium mb-10">
-          Protect your whole reputation with just 0$
+          protect your whole reputation with just 0$
         </p>
 
         {/* Action Buttons */}
