@@ -89,7 +89,7 @@ const items = [
     icon: <Globe className="h-4 w-4 text-blue-600" />,
   },
   {
-    title: "Powerful APIs for developers",
+    title: "Powerful APIs for developers,",
     description: "Seamless integration with a few lines of code.",
     header: (
       <Skeleton className="bg-slate-900 p-5 font-mono">
