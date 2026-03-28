@@ -16,7 +16,7 @@ const faqData = [
   },
   {
     question: "How does Cynoguard compare to others ?",
-    answer: "Cynoguard offers a unique blend of decentralized security and high-performance monitoring that is specifically tailored for the needs of modern startups and SMBs.",
+    answer: "Cynoguard offers an unique blend of decentralized security and high-performance monitoring that is specifically tailored for the needs of modern startups and SMBs.",
   },
   {
     question: "Why not just a VPN ?",
