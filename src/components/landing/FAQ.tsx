@@ -11,7 +11,7 @@ const faqData = [
     answer: "Yes, Cynoguard is designed with a focus on simplicity. Our intuitive dashboard allows you to manage your security protocols with zero learning curve.",
   },
   {
-    question: "Is Cynoguard optimized for bot detection ?",
+    question: "Is Cynoguard optimized for bot detection?",
     answer: "Absolutely. We use advanced AI-driven patterns to identify and mitigate bot threats in real-time without affecting your legitimate user traffic.",
   },
   {
