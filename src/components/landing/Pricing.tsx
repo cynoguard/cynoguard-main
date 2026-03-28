@@ -42,7 +42,7 @@ const plans = [
     price: "$99",
     features: [
       "Unlimited Monitoring",
-      "Unlimited projects",
+      "Unlimited Projects",
       "Custom Security Rules",
       "Integrations",
       "Dedicated account manager",
