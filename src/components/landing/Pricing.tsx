@@ -47,7 +47,7 @@ const plans = [
       "Integrations",
       "Dedicated account manager",
       "Custom Fields",
-      "Advanced analytics",
+      "Advanced Analytics",
       "Export capabilities",
       "API access",
       "Advanced security features"
