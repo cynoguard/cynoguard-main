@@ -52,7 +52,7 @@ const plans = [
       "API access",
       "Advanced security features"
     ],
-    buttonText: "Sign up now",
+    buttonText: "Sign Up Now",
     popular: false,
   },
 ];
