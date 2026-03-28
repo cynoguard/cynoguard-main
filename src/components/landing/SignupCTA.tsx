@@ -49,7 +49,7 @@ export const SignupCTA = () => {
           "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-150 fill-mode-both",
           "text-5xl md:text-6xl font-bold tracking-tight text-white mb-4"
         )}>
-          Sign up for free today
+          Sign up for free today.
         </h2>
 
         <p className={cn(
