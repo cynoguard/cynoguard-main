@@ -34,7 +34,7 @@ const plans = [
       "Centralized Dashboard",
       "API Access"
     ],
-    buttonText: "Sign up now",
+    buttonText: "Sign Up Now",
     popular: true,
   },
   {
