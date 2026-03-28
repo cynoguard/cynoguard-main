@@ -20,7 +20,7 @@ const Hero = () => {
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 max-w-4xl mb-6">
-          The Security Solutions <br /> For Your Business
+          The Security Solutions <br /> For Your Business.
         </h1>
 
         {/* Subtext */}
