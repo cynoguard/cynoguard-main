@@ -13,8 +13,8 @@ const SocialMonitoringHero = () => {
       <div className="absolute -top-48 right-0 h-96 w-96 rounded-full bg-green-900/15 blur-3xl pointer-events-none animate-pulse-slow" />
       <div className="absolute -bottom-40 left-10 h-80 w-80 rounded-full bg-gray-900 blur-3xl pointer-events-none animate-pulse-slow delay-500" />
 
-      <div className={cn("relative z-10 max-w-6xl mx-auto px-4 sm:px-6")}>
-        <div className="space-y-8 max-w-3xl">
+      <div className={cn("relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex justify-center")}>
+        <div className="space-y-8 max-w-3xl text-center">
 
           {/* Badge */}
           <div className="animate-in fade-in slide-in-from-top-4 duration-700 fill-mode-both">
@@ -37,7 +37,7 @@ const SocialMonitoringHero = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both">
             <Button className="bg-green-600 hover:bg-green-500 text-white px-7 py-5 rounded-md text-base font-medium hover:scale-[1.02] transition-all shadow-lg shadow-green-900/40" asChild>
               <Link href="/sign-up">Start monitoring</Link>
             </Button>
