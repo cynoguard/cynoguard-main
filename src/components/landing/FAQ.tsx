@@ -7,7 +7,7 @@ import {
 
 const faqData = [
   {
-    question: "Is Cynoguard easy to use?",
+    question: "Is Cynoguard easy to use ?",
     answer: "Yes, Cynoguard is designed with a focus on simplicity. Our intuitive dashboard allows you to manage your security protocols with zero learning curve.",
   },
   {
