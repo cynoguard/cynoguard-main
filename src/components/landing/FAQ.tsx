@@ -27,7 +27,7 @@ const faqData = [
     answer: "We offer a 30-day money-back guarantee on all our paid plans. If you're not satisfied, we'll refund your purchase, no questions asked.",
   },
   {
-    question: "What features will be added in the future?",
+    question: "What features will be added in the future ?",
     answer: "Our roadmap includes deeper AI automation, more native integrations with popular cloud providers, and enhanced quantum-resistant encryption protocols.",
   },
 ];
