@@ -43,7 +43,7 @@ export function FAQ() {
           </h2>
         </div>
 
-        {/* Accordion Logic */}
+        {/* Accordion Logic. */}
         <Accordion type="single" collapsible className="w-full space-y-2">
           {faqData.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`} className="border-b border-slate-100 py-2">
