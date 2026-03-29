@@ -23,7 +23,7 @@ const faqData = [
     answer: "While a VPN secures your connection, Cynoguard protects your entire business infrastructure, provides threat intelligence, and automates security responses that a VPN cannot.",
   },
   {
-    question: "Can I get a refund if I don't like it?",
+    question: "Can I get a refund if I don't like it ?",
     answer: "We offer a 30-day money-back guarantee on all our paid plans. If you're not satisfied, we'll refund your purchase, no questions asked.",
   },
   {
