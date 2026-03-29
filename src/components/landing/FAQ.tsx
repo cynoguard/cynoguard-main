@@ -19,7 +19,7 @@ const faqData = [
     answer: "Cynoguard offers an unique blend of decentralized security and high-performance monitoring that is specifically tailored for the needs of modern startups and SMBs.",
   },
   {
-    question: "Why not just a VPN?",
+    question: "Why not just a VPN ?",
     answer: "While a VPN secures your connection, Cynoguard protects your entire business infrastructure, provides threat intelligence, and automates security responses that a VPN cannot.",
   },
   {
