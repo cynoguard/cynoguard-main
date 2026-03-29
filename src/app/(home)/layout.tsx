@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "smb phishing monitoring",
   ],
 
-//   openGraph: {
+
 //     title: "CynoGuard – Stop Domain Impersonation & Bots",
 //     description:
 //       "Early warning platform built on Next.js and Fastify with PostgreSQL for serious SMB protection.",
