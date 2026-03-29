@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: "Can I get a refund if I don't like it?",
-    answer: "We offer a 30-day money-back guarantee on all our paid plans. If you're not satisfied, we'll refund your purchase, no questions asked.",
+    answer: "We offer a 30-day money-back guarantee on all our paid plans. If you're not satisfied we'll refund your purchase, no questions asked.",
   },
   {
     question: "What features will be added in the future?",
