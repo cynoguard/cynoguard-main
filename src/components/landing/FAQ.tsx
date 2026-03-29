@@ -15,7 +15,7 @@ const faqData = [
     answer: "Absolutely. We use advanced AI-driven patterns to identify and mitigate bot threats in real-time without affecting your legitimate user traffic.",
   },
   {
-    question: "How does Cynoguard compare to others?",
+    question: "How does Cynoguard compare to others ?",
     answer: "Cynoguard offers an unique blend of decentralized security and high-performance monitoring that is specifically tailored for the needs of modern startups and SMBs.",
   },
   {
