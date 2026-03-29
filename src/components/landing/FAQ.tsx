@@ -20,7 +20,7 @@ const faqData = [
   },
   {
     question: "Why not just a VPN?",
-    answer: "While a VPN secures your connection, Cynoguard protects your entire business infrastructure, provides threat intelligence, and automates security responses that a VPN cannot.",
+    answer: "While a VPN secures your connection,  entire business infrastructure, provides threat intelligence, and automates security responses that a VPN cannot.",
   },
   {
     question: "Can I get a refund if I don't like it?",
